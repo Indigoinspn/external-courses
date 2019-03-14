@@ -24,5 +24,4 @@ function checkIfSimple (num) {
     } 
     return message      
 }
-
 module.exports = checkIfSimple;

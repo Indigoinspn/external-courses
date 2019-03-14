@@ -9,5 +9,4 @@ function checkForRepeat (arr) {
     }    
     return true;      
 }
-
 module.exports = checkForRepeat;   
