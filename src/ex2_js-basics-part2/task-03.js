@@ -16,5 +16,6 @@ function oddEvenZeroNum (arr) {
     }
 
     return ( [ even, odd, zero ] );   
-}  
+} 
+ 
 module.exports = oddEvenZeroNum;

@@ -11,4 +11,5 @@ function findMaxNum (arr) {
       
     return maxNum;      
 } 
+
 module.exports = findMaxNum;

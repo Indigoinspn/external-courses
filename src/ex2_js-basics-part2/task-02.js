@@ -5,5 +5,6 @@ function loopObject (arr) {
         console.log( arr[i] );
     }
     console.log( "Число элементов: " + arr.length);
-}  
+} 
+ 
 module.exports = loopObject;

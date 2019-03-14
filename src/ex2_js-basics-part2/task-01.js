@@ -9,4 +9,5 @@ function processType(input) {
     
     return outputType;            
 }
+
 module.exports = processType;
