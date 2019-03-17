@@ -1,13 +1,17 @@
 function processType(input) {
-    var outputType;
+
+    if (!input && input!== 0 && input!== "" ) { //  Condition true for Nan, null, underfined, except zero and empty string.    
+        return undefined;
+    }
     
-    if (typeof (input) === "string") {
-        outputType = "string";               
-    } else if (typeof (input) === "number") {
-        outputType = "number";                
+    switch (typeof input) {
+        case "string":
+            return "string";
+        case "number":
+            return "number";
+        default:
+        return undefined;
     } 
-    
-    return outputType;            
 }
 
 module.exports = processType;
