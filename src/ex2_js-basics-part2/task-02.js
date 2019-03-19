@@ -1,7 +1,6 @@
 function loopObject (arr) {
-    var quantity = arr.length - 1;
-
-    for (var i = 0; i <= quantity; i++) {
+    
+    for (var i = 0; i < arr.length; i++) {
         console.log( arr[i] );
     }
     console.log( "Число элементов: " + arr.length);

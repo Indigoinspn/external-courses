@@ -1,28 +1,17 @@
-function checkIfSimple (num) { 
-    var message;
+function checkIfSimple (num) {     
 
-    if (num < 2 || num > 1000) {
-        message = "Данные неверны" ; 
-    } else if (num === 2) {
-        message = "Число " + num + " - простое число"; 
-    } else {
-        
-        for (i = 2; i < num ; i++) {
+    if ( num < 2 || num > 1000 || !num) { // !num - Condition true for Nan, null, underfined, empty string and zero.
+        return "Данные неверны" ; 
+    }
 
-            if (num % i === 0) {
-                message = "Число " + num + " - составное число"; 
-                break;                       
-            } 
-            else {
+    for (i = 1; i < num ; i++) {
 
-                if ( ++i === num) {                    
-                    message ="Число " + num + " - простое число";
-                }                
-                continue;
-            }             
-        }                
+        if (num % i === 0 && i !== 1) {                 
+            return "Число " + num + " - составное число";                                       
+        }                       
     } 
-    return message      
+
+    return "Число " + num + " - простое число";         
 }
 
 module.exports = checkIfSimple;

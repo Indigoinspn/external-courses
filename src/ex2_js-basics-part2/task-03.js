@@ -1,16 +1,13 @@
 function oddEvenZeroNum (arr) {
-    var index = arr.length - 1;
-    var zero = 0;
-    var even = 0;
-    var odd = 0; 
-    
-    for (var i = 0; i <= index; i++) {
+    var zero = 0, even = 0, odd = 0; 
+        
+    for (var i = 0; i < arr.length; i++) {
 
         if (arr[i] === 0) {             
             zero++;  
-        } else if ( arr[i] % 2 === 0 && typeof(arr[i]) === "number" ) {                
+        } else if ( arr[i] % 2 === 0 && typeof arr[i] === "number" ) {                
             even++;           
-        } else if ( arr[i] % 2 !== 0 && typeof(arr[i]) === "number") {                
+        } else if ( arr[i] % 2 !== 0 && typeof arr[i] === "number") {                
             odd++;              
         } 
     }
