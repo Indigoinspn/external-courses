@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ex9_task-04.html</title>
+    <style>
+        body {
+            margin: 2% 2%;
+        }
+
+        div[id*="b"] {
+            width: 93vw;
+            height: 500px;
+        }
+
+        /* approach 1 */
+
+        #b-1 {
+            background-color: #c3d8c7;
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+
+        #b-2 {
+            background-color: #95be9b;
+            position: relative;
+            top: -20px;
+            left: -20px;
+        }
+
+        #b-3 {
+            background-color: #6fa878;
+            position: relative;
+            top: -20px;
+            left: -20px;
+        }
+
+        /* approach 2 */
+
+        #b-4 {
+            background-color: #c3d8c7;
+            position: absolute;
+            top: 660px;
+            left: 80px;
+        }
+
+        #b-5 {
+            background-color: #95be9b;
+            position: absolute;
+            top: 640px;
+            left: 60px;
+        }
+
+        #b-6 {
+            background-color: #6fa878;
+            position: absolute;
+            top: 620px;
+            left: 40px;
+        }
+
+        /* approach 3 */
+
+        #b-7 {
+            background-color: #6fa878;
+            margin-top: 36%;
+            margin-bottom: 5%;
+            box-shadow: 20px 20px #95be9b, 40px 40px #c3d8c7;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- approach 1-->
+
+    <div id="b-1">
+        <div id="b-2">
+            <div id="b-3"> </div>
+        </div>
+    </div>
+
+    <!-- approach 2-->
+
+    <div id="b-4"> </div>
+    <div id="b-5"> </div>
+    <div id="b-6"> </div>
+
+
+    <!-- approach 2-->
+
+    <div id="b-7"> </div>
+
+</body>
+
+</html>
