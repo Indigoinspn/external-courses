@@ -1,0 +1,505 @@
+/*************************** Base Styles ***************************/
+
+@import 'normalize.css'; /*By using this file you are essentially overwriting  the browsers default rules and making all browsers play by the same rules.*/
+
+
+
+html {
+    box-sizing: border-box;   /* Change all elements to use border-box */
+    font-size:0.625rem;      /* 10px*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {    
+    color:#6d6e71;    
+    background: #ffffff;   
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.container-main{
+    background-size: 100%;  
+    background:url("tablet_bg_img.jpg") no-repeat center top;      
+}
+
+header { 
+    display: flex;
+    flex-direction: row;  
+    flex-flow: wrap; 
+    justify-content: space-between;
+    padding: 3rem 4rem 0;          
+}
+
+main {    
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    padding-bottom: 3rem;       
+}
+
+/**********************  NAVIGATION BAR  ************************/
+
+/************ Gamburger and dropdown menu ***********/
+
+#gamburger {
+    width: 6rem;       
+    font-size: 6rem;    
+    line-height: 2.5rem; 
+    color:#3687c4;  
+    text-align: center;
+    position: relative;    
+}
+
+#dropdown-menu {
+    display: none;
+    z-index: 4;
+    position: absolute;
+    min-width: 25rem;
+    text-align: left;
+    background-color: #ffffff;    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);    
+}
+
+#dropdown-menu a {
+    display: block;
+    font-size: 2rem;
+    padding: 1.5rem;
+    color: #6d6e71; 
+    text-decoration: none;
+    border-bottom: 1px solid transparent;    
+}
+
+#gamburger:hover  {
+    cursor: pointer; 
+    color:#32a3fa;    
+}
+
+#dropdown-menu a:hover {
+    cursor: pointer;    
+    color:#32a3fa;
+    border-bottom: 1px solid #32a3fa; 
+}
+
+/************ Logo ***********/
+
+.logo {
+    width: 15rem; /*150px;*/    
+    background:url("logo.png") no-repeat center top; 
+}
+
+/************ Contacts ***********/
+
+.contacts {
+    display: none;
+}
+
+/************ Search field ***********/
+
+#search-container {
+    position: relative;          
+}
+
+#search-icon {    
+    font-size: 5rem; 
+    color:#969798;
+} 
+
+#search-icon:hover {
+    color:#3687c4;
+    cursor: pointer;
+}
+
+#search-form { 
+    display: none;     
+    z-index: 4;
+    position: absolute;             
+    width: 20rem; 
+    bottom: -5rem;
+    right: 1rem;
+    padding: 0.5rem; 
+    font-size: 1.4rem;     
+    background-color: #ffffff;     
+}
+
+#search-field {
+    width: 100%;    
+    color:#3687c4;    
+    border: none;   
+}
+
+#search-field:focus {         
+    outline: none; 
+}
+
+#search-field::placeholder {
+    color:#6d6e71;
+}
+
+/**********************  CENTRAL PART  ************************/
+.central-part {   
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width:100%;
+    min-height: 45rem;     
+}
+
+.heading{      
+    width: 73%;
+    height: 10.7rem;    
+    margin:20% 60% 30%;    
+    color:#ffffff;    
+    border: 1px solid #bfc5c9;     
+}
+
+.first-line  {        
+    z-index: 1; 
+    position: relative;
+    text-align: center;   
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 6rem;  
+    letter-spacing: 0.2rem;            
+}
+
+.second-line {
+    z-index: 2; 
+    position: relative;    
+    text-align: center;     
+    font-size: 3.5rem; 
+    font-family: 'Montserrat', sans-serif;          
+}  
+
+.heading img {    
+    position: relative;
+    bottom:11rem;   
+    left:1rem;     
+}
+
+/*********************** SLIDER ****************************************/
+
+.slider, .arrow-next {
+    display: none;    
+}
+
+/*********************** ARTICLES  ****************************************/
+.articles {
+    width: 73%; 
+    display: flex;        
+    flex-direction: column;     
+    align-items: center;       
+    margin-bottom: 10rem;
+}  
+    
+article {     
+    display: flex;
+    flex-wrap: wrap;       
+    align-items: center; 
+    margin-bottom: 2rem;  
+}
+
+.icon {      
+    margin:auto;          
+}
+
+.content {
+    display: flex;
+    flex-direction: column;      
+    width: 100%; 
+    text-decoration: none; 
+}
+
+h2 {    
+    height:47%;
+    font-size: 2rem;  
+    font-weight: bold; 
+    color: #6d6e71;     
+}
+
+.text {
+    height: 6.5rem;
+    font-size: 1.6rem; 
+    text-align: justify; 
+    overflow: hidden;      
+    color: #6d6e71;    
+}
+
+/*************** MEDIA QUERIES common rules for large devices ****************/
+
+@media only screen and  (min-width: 1200px) {
+
+    /************ Nav bar ***********/
+
+    #search-container {
+        display: flex;  
+        width: 20rem; 
+        height: 6.3rem;                         
+    }
+    
+    #search-icon {
+        font-size: 2rem; 
+    } 
+
+    #search-form { 
+        display: inline;  
+        position: static;
+        padding: 0;      
+        margin-left: 1.3rem;     
+    }   
+
+    /******** Central part *******/
+
+    .heading {
+        padding-left: 7.5%;         
+        margin-bottom: 30%; 
+    }
+
+    .first-line {                 
+        font-size: 5.5rem; 
+        margin-right: 24%;        
+    }
+
+    .second-line {       
+        font-size: 4rem;        
+    } 
+}
+
+/*************************   MEDIA QUERIES for tablet **************************/
+
+@media only screen and  (min-width: 1200px) and (max-width: 1345px) {    
+
+    /*********** Articles **********/
+
+    .articles {        
+        display: flex;        
+        flex-direction: column;     
+        align-items: center;       
+    }
+
+    article {
+        margin-bottom: 4%;  
+    }
+
+    .content {   
+        width: 86%;     
+        justify-content: space-between;              
+    } 
+
+    .icon {
+        padding: 0;       
+    }    
+}
+
+/*************************  MEDIA QUERIES for desktop **************************/
+
+@media only screen and  (min-width: 1346px)  {
+
+    .container-main {
+        background: #ffffff url("desktop_bg_img.jpg") no-repeat center top;
+    }
+
+    header, main {
+        margin: auto;  
+        padding-left: 9rem;  
+        padding-right: 9rem;      
+        max-width: 134.5rem;                     
+    }
+
+    /************ Nav bar ***********/
+    #gamburger {
+        order: 3;
+        position: static;
+        width: 82.5%; 
+        border-top: 1px solid #dcdcdd;  
+        border-bottom: 1px solid transparent; 
+    }
+    
+    #gamburger i {
+        display:none;             
+    }
+
+    #dropdown-menu { 
+        display: flex;        
+        box-shadow: none;        
+        font-weight: bold;                     
+    }
+
+    #dropdown-menu a {
+        font-size: 1.4rem; 
+        line-height: 4.5rem;  
+        padding: 2.1rem 2.1rem 0 2.1rem;             
+    }  
+
+    #dropdown-menu a:hover {
+        cursor: pointer;    
+        color:#32a3fa;
+        border-bottom: none; 
+    }   
+    
+    #dropdown-menu a:hover .arrow-up {
+        width: 0; 
+        height: 0; 
+        position: relative;
+        top: 1rem;
+        margin: auto;
+        border-left: 2rem solid transparent;
+        border-right: 2rem solid transparent;        
+        border-bottom: 1rem solid #32a3fa;
+    }    
+        
+    #dropdown-menu a:not(:last-of-type)  {
+        border-right: 1px solid #dcdcdd; 
+    } 
+
+    /************ Logo, contacts, search field  ***********/
+
+    #search-container {      
+        order: 4;
+        width: 17.5%;
+        height: 9rem; 
+        align-items: center;
+        border-top: 1px solid #dcdcdd;   
+    }
+  
+    .logo {
+        width:38.6rem;    
+        margin-bottom: 5.5rem ; 
+        background:url("logo_desktop.png") no-repeat center top; 
+    }
+
+    .contacts {
+        display: block;
+        position: relative;
+        width: 17.5%;        
+        margin-bottom: 5.5rem;    
+    }
+
+
+    #tooltip {         
+        display: none;
+        font-family: Arial;
+        font-weight: 100;
+        font-size: 1.5rem;         
+        text-align: center; 
+        width: 20.1rem;
+        height: 5rem;
+        padding: 15px 0;
+        position: absolute;        
+        top: 0%;
+        left: 0%;
+        border: 1px solid #d4d4d5;
+        border-radius: 10px;  
+        color: #858688;             
+    }
+
+    #tooltip::before,
+    #tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        border: solid transparent;
+
+    }
+
+    #tooltip::before {     
+        border-top-color: #d4d4d5; 
+        border-width: 14px;     
+        left: 8.5rem;             
+    }
+
+    #tooltip::after {   
+        left: 8.6rem;       
+        border-top-color: #ffffff;  
+        border-width: 13px;       
+    }
+
+    .icons {        
+        margin-top: 7rem;            
+    }
+
+    .fa-phone, 
+    .fa-map-marker-alt,
+    .fa-envelope {
+        font-size: 2.84rem;
+        padding: 0 9.6%;        
+    }
+
+    .icons i:hover  {
+        color:#3687c4;
+        cursor: pointer; 
+    }
+
+    #geo {
+        border-left:1px solid #dcdcdd;
+        border-right:1px solid #dcdcdd;      
+    }
+
+   /********* Central part *******/
+
+    .heading {
+        width: 85%;
+        margin-top: 22%;
+        margin-bottom: 13.5%;
+    }
+
+    /*********** Slider **********/
+
+    .slider {
+        display: flex; 
+        justify-content: flex-end;
+        width: 76rem; 
+        margin-left: 34.5%;         
+    }
+
+    .arrow-next {
+        display: block; 
+        width: 10rem;
+        font-size: 15rem;
+        text-align: center;
+        color:#d4d4d4;
+        background-color: #f4f4f4;  
+    }
+
+    .arrow-next:hover {
+        color:#fffefe;
+        background-color: #c4c3c3;  
+        cursor: pointer;
+    }
+
+    /*********** Articles **********/
+
+    .articles {
+        width: 100%;              
+        flex-direction: row;  
+        justify-content: space-between;        
+        margin: 10rem auto ; 
+    }
+
+    article {
+        width: 45%;        
+        align-items: flex-start;            
+    }   
+
+    .icon {
+        width: 23%;        
+        margin: 0%;        
+    }
+
+    .content {
+        width: 77%;
+        height: 30rem;        
+    }
+
+    h2 {  
+        height: 20%;
+        margin: 0;  
+        font-size: 2.7rem;         
+        line-height: 6rem;        
+    }
+
+    .text {
+        height: 78%;
+    }  
+}

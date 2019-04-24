@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+    <style>
+
+        html {
+            box-sizing: border-box;
+            font-size: 0.625rem;
+        }
+
+        table {
+            font-size: 1.6rem;
+            font-family:  sans-serif;            
+            margin: 2% 20%;         
+            border-collapse: collapse;            
+            color: #848388; 
+            background-color: #f2f6fa;           
+        }
+
+        table, th, td {
+            border:2px solid #ffffff;
+        }               
+
+        th {            
+            font-size: 1.2rem;                      
+            text-align: center; 
+            text-transform: uppercase;   
+            padding-top: 1%;
+            padding-bottom: 1%; 
+            background-color: #e3eaf3;          
+        }
+
+        td {
+            padding: 2% 1.5%;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e3eaf3;
+        }
+
+        tr:hover {
+            background-color: #d8dee5;
+        }
+
+        .name {
+            width: 14rem;
+            text-transform: capitalize;            
+        }
+
+        .phone{
+            width: 15rem;
+        }
+
+        .mail {
+            width: 22rem;
+        }
+
+        .amount {
+            width: 13rem;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="customer">customer</th>
+                <th class="phone">phone</th>
+                <th class="mail">mail</th>
+                <th class="amount">outstanding</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="name">jhonny aviony</td>
+                <td>(740) 841-7566</td>
+                <td>info@jhonnyaviony.com</td>
+                <td>$ 2.400.00</td>
+            </tr>
+
+            <tr>
+                <td class="name">mark hammock</td>
+                <td>(800) 950-4511</td>
+                <td>markhammock@gmail.com</td>
+                <td>$ 700.00</td>
+            </tr>
+
+            <tr>
+                <td class="name">rlchicl cross</td>
+                <td>(322) 841-7566</td>
+                <td>crossstation@gmail.com</td>
+                <td>$ 1.755.00</td>
+            </tr>
+
+            <tr>
+                <td class="name">flinn's shack</td>
+                <td>(740) 841-7566</td>
+                <td>help@finns.com</td>
+                <td>$ 26.850.00</td>
+            </tr>
+
+            <tr>
+                <td class="name">filip justic</td>
+                <td>(322) 841-7566</td>
+                <td>filip.justic@gmail.com</td>
+                <td>$ 642.214.00 </td>
+            </tr>
+
+            <tr>
+                <td class="name">summer evans</td>
+                <td>(800) 950-4511</td>
+                <td>summer@gmail.com</td>
+                <td>$ 700.00</td>
+            </tr>
+
+            <tr>
+                <td class="name">marco s. diaz</td>
+                <td>(800) 800-1111</td>
+                <td>s.diaz@gmail.com</td>
+                <td>$ 65.00</td>
+            </tr>
+
+            <tr>
+                <td class="name">ricky stwerat</td>
+                <td>(800) 800-2222</td>
+                <td>r.stwerat@gmail.com</td>
+                <td>$ 930.00</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
