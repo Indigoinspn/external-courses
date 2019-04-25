@@ -1,6 +1,5 @@
-function createEmptyObjectWithNullProto() {
-    var emptyObj = Object.create(null);   
-    return emptyObj;           
+function createEmptyObjectWithNullProto() {     
+    return Object.create(null);           
 }
 
 module.exports = createEmptyObjectWithNullProto;

@@ -1,8 +1,5 @@
 function ifStringIncludeString(str1, str2) {
-
-    if (!str1) return false;
-    var result = str1.includes(str2);                     
-    return result;           
+    return str1.includes(str2);            
 }
 
 module.exports = ifStringIncludeString;

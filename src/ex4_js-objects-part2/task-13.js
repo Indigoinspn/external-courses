@@ -1,6 +1,5 @@
-function randomNum() {                   
-    var num = Math.random() * 100;                   
-    return num;
+function randomNum() {              
+    return Math.floor(Math.random() * 100);
 }
 
 module.exports = randomNum;

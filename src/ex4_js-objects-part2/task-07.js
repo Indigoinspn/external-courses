@@ -1,17 +1,13 @@
-function toLimitTheString(str, num) {
-    var limitedStr;
+function toLimitTheString(str, num) {    
 
     if (typeof str !== "string" || typeof num !== "number" ||!str || !num) {
         return "wrong value";
     }
     else if (str.length > num) {
-        limitedStr = str.slice(0, num-1);                       
-        limitedStr = limitedStr.concat("…");        
-        return limitedStr;
-    }
-    limitedStr = str;          
+        return str.slice(0, num-1).concat("…");
+    }            
 
-    return limitedStr;  
+    return str;   
 }
 
 module.exports = toLimitTheString;

@@ -1,6 +1,5 @@
-function deleteFirstAndLastGap(str) {
-    var updatedStr = str.trim();          
-    return updatedStr;           
+function deleteFirstAndLastGap(str) {             
+    return str.slice(1, -1);           
 }
 
 module.exports = deleteFirstAndLastGap;

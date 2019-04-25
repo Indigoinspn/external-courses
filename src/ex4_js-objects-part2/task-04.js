@@ -1,6 +1,5 @@
-function capitalizeFirstChar(str) {
-    var updatedStr = str.replace (str[0], str[0].toUpperCase())          
-    return updatedStr;           
+function capitalizeFirstChar(str) {           
+    return str.replace (str[0], str[0].toUpperCase());           
 }
 
 module.exports = capitalizeFirstChar;

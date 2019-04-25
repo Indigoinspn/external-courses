@@ -1,7 +1,5 @@
-function returnWholeNum(min, max) {                   
-    var num = Math.round(Math.random() * (max-min)+ min);                        
-    
-    return num;
+function returnWholeNum(min, max) {                  
+    return Math.round(Math.random() * (max-min)+ min); 
 }
 
 module.exports = returnWholeNum;
