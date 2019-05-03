@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task-01.html - Adaptive article block</title>
+    <style>
+        html {
+            box-sizing: border-box;     /* Change all elements to use border-box */
+            font-size: 0.625rem;       /* 10px*/
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 1% 30%;
+            font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container-article {            
+            min-width: 150px;            
+            padding: 2%;
+            border-radius: 10px;
+            border: 2px solid #6cac9c;
+            background-color: #a1dfd2;
+        }
+
+        article {            
+            border: 2px solid #61d0bd;
+            background-color: #f3f1e6;
+        }
+
+        h1 {
+            padding: 3%;
+            margin: 0%;
+            font-size: 2.5rem;
+            background-image: linear-gradient(#fed500, #ffbb00);
+        }
+
+        .arrow {
+            content: "";
+            margin: 0 97% 0 3%;
+            border: 15px solid;
+            border-color: #ffbb00 transparent transparent transparent;
+        }
+
+        p {
+            padding: 0 3% 3%;
+            margin: 0%;
+            font-size: 1.8rem;
+            color: #6d889b;           
+        }
+       
+    </style>
+</head>
+
+<body>
+
+    <!--  ********* ADAPTIVE ARTICLE  BLOCK ********* -->
+
+    <div class="container-article">
+        <article>
+            <h1> Header </h1>
+            <div class="arrow"></div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum urna nisl, tincidunt pharetra
+                nisl molestie nec. Aenean elementum libero volutpat orci mollis, ac condimentum sem congue. Etiam
+                scelerisque, nisl id ornare lobortis, ante urna tincidunt tellus, at venenatis magna nibh vel
+                sem. Aliquam et molestie metus.
+            </p>
+
+        </article>
+    </div>
+</body>
+</html>
