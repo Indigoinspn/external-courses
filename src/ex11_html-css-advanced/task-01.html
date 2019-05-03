@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task-01.html - Round image with mask </title>
+    
+    <style>
+        
+        img {
+            width: 1000px;
+            height: 900px;            
+            border-radius: 50%
+        }
+
+        #mask {                        
+            -webkit-mask: url("https://www.bmgs.com.au/wp-content/uploads/2017/03/world-map-1.png");            
+            -webkit-mask-position: center;            
+        }
+
+        .border {
+            width: 1000px;
+            height: 900px; 
+            margin: 2% 20%;            
+            border-radius: 50%;
+            box-shadow: 0px 0px 0px 2px grey;           
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div class="border">
+        <img id="mask" src="https://znaj.ua/images/2018/09/03/URaF8WMER5QBls8JefhVRXeHgSoiVBxjiyzTPTly.jpeg" alt="Image of green planet" title="Green planet">
+    </div>    
+</body>
+</html>

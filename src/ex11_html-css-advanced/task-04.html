@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="task-04.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>task-04.html - Side Bar</title>
+</head>
+
+<body>
+    <!-- *********************  TOP HEADER  ******************** -->
+    
+
+    <header>
+        <a href="#" target="_blank"> Help Center </a>
+        <a href="#" target="_blank"> Our Support </a>
+        <div id="profile-container">
+            <div id="profile-image"></div>
+            <div id="user-name">John Doe </div>
+            <button><i class="fas fa-chevron-circle-down"></i></button>
+        </div>
+    </header>
+    <main>
+
+        <!-- *********************  SIDE BAR  ******************** -->
+
+        <nav>
+
+            <!--  ******** Side bar FIRST BLOCK *********** -->
+
+            <div id="first-block">
+                <button> &plus; ADD BOOK</button>
+            </div>
+
+            <!--  ******** Side bar SECOND BLOCK *********** -->
+
+            <div id="second-block">
+                <div> <i class="fas fa-book"></i> Now Reading </div>
+                <div> <i class="fas fa-globe-americas"></i> Browse </div>
+                <div> <i class="fas fa-shopping-cart"></i> Buy Books </div>
+                <div> <i class="fas fa-star"></i> Favourite Books</div>
+                <div> <i class="fas fa-list"></i> Wishlist </div>
+                <div> <i class="far fa-clock"></i> History </div>
+            </div>
+
+            <!--  ******** Side bar THIRD BLOCK *********** -->
+
+            <div id="third-block">
+                <ul>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        <div> Must Read Titles </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        <div> Best of List </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        <div> Classic Novels </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        <div> Non Fiction </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!--  ******** Side bar FOURTH BLOCK *********** -->
+
+            <div id="fourth-block">
+
+                <div class="history-event">
+                    <i class="far fa-clock"></i>
+
+                    <div class="history-container">
+
+                        <div class="event-info"> You added <span class="book-title"> Fight Club </span>
+                            by <span class="book-author"> Chuck Palahniuk </span>
+                            to your <span class="book-group">Must Read Titles</span>
+                        </div>
+                        <div class="time-ago"> 24 minutes ago</div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="history-event">
+                    <i class="far fa-clock"></i>
+
+                    <div class="history-container">
+
+                        <div class="event-info"> You added <span class="book-title"> The Trial </span>
+                            by <span class="book-author"> Franz Kafka </span>
+                            to your <span class="book-group">Must Read Titles</span>
+                        </div>
+                        <div class="time-ago"> 48 minutes ago</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- *******************  MAIN CONTENT with book images ***************** -->
+        <section>
+
+            <header>
+                <h1>Brows Available Books</h1>
+                <nav>
+                    <div id="filters">
+                        <div>All books</div>
+                        <div>Most recent</div>
+                        <div>Most popular</div>
+                        <div>Free books</div>
+                    </div>
+                    <form id="search-field" action="#">
+                        <input type="text" placeholder="Enter Keywords" name="search">
+                        <i class="fas fa-search"></i>
+                    </form>
+                </nav>
+            </header>
+
+            <!-- *************** IMAGES  ************ -->
+            <div class="books-container">
+                <div class="row">
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                </div>
+                <div class="row">
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                </div>
+                <div class="row">
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- *****************************  FOOTER *********************** --> 
+
+    <footer>
+            <button id ="questions"> <i class="fas fa-question-circle"></i> </button>
+            <button id ="settings" > <i class="fas fa-cog"></i> </button>
+    </footer>
+
+</body>
+</html>

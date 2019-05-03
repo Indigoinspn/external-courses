@@ -1,0 +1,355 @@
+/**************** BASE *************************/
+
+html {
+    box-sizing: border-box;   
+    font-size:0.625rem;      /* 10px*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin-top: 0%;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    flex-flow: nowrap column;
+    background-color: #ffffff;
+}
+
+/* Color scheme
+   Header background - MidnighSlatetBlue - #2f364a
+   Header font - LightGrey - #69738c
+   Sub Header background - LightGrey - #eef1f7
+   Filter buttons - LightGrey - #97b3ce
+   Sidebar background - MidnighBlue - #1f2637 
+   Sidebar font - LightGrey - #78829d 
+   Sidebar font - Grey - #4f5a6f
+   Add button - Salmon -  #f2795a
+   Boollet list:
+                Pink - #e64c66
+                Orange - #ffab00
+                SeaBlue - #00bfdd
+                SlateBlue  - #7874cf
+
+   Footer background - DarkMidnighBlue - #181e2c
+   Highlights - SkyBlue - #15a4fa   
+   Rating Stars - Orange - #ffab00    */
+
+
+body > header, body > footer {
+    width: 132rem;
+    height: 4.5rem; 
+    display:flex;
+    flex-flow: nowrap row;
+    justify-content: flex-end;     
+}
+
+body > main {
+    display: flex;    
+}
+
+/***********************  TOP HEADER  ***********************/
+
+body > header {    
+    line-height: 4rem;    
+    border-radius: 1rem 1rem 0 0; 
+    background-color: #2f364a;
+}
+
+body > header a {
+    padding: 0 1.7rem;
+    color:#69738c;
+    font-size: 1.5rem;
+    text-decoration: none;    
+}
+
+header a:hover {
+    color:#ffffff;    
+}
+
+#profile-container {
+    display:flex;  
+    width: 15.7rem;
+    text-align: center;
+    color:#ffffff;   
+    background-color: #15a4fa; 
+    border-radius: 0 1rem 0 0;  
+}
+
+#profile-image {
+    width: 2.9rem ;
+    height: 2.8rem;
+    margin: 0.9rem 0.7rem;
+    border-radius: 50%;   
+    background-color: #8dbef5;  
+    border: 1px solid #ffffff;   
+}
+
+#user-name {    
+    width:6.7rem; 
+    font-size: 1.3rem; 
+    line-height: 4.5rem;  
+}
+
+body > header button {
+    padding: 1rem 1.5rem;
+    color: #ffffff;  
+    border:none;
+    outline: none;  
+    background-color: transparent;        
+}
+
+body > header button:hover {
+    color: #046bac;
+}
+
+/***********************  Side Bar  ***********************/
+
+main > nav {
+    height: 90rem;
+    width: 20rem;
+    color: #78829d;
+    background-color: #1f2637;
+}
+
+#first-block, #second-block,
+#third-block, #fourth-block {    
+    border-top: 1px solid #31394c;
+    border-bottom: 6px solid #19202e;
+}
+
+/******** Side bar first-block ***********/
+
+#first-block {
+    height: 12rem;   
+}
+
+#first-block button {
+    width: 16rem;
+    height: 4.4rem;
+    margin:3.5rem 2rem;
+    color: #ffffff;
+    font-weight: bold;
+    outline: none;
+    border-radius: 0.4rem;
+    border: 1px solid #f2795a;    
+    background-color: #f2795a;
+}
+#first-block button:hover {   
+    border: 1px solid #f2795a;    
+    background-color: #eb6a4a;
+}
+
+/********  Side bar second-block  ***********/
+
+#second-block {
+    height: 24.5rem;    
+}
+
+#second-block div {
+    height: 4rem;
+    padding: 1rem 2rem;    
+}
+
+#second-block div:hover {
+    color: #ffffff;
+    background-color: #15a4fa;
+}
+
+#second-block div i {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+}
+/******** Side bar third-block  ***********/
+
+#third-block {
+    height: 19rem;    
+}
+
+#third-block ul {
+    height: 15rem; 
+    list-style: none;
+    padding-left: 2rem;       
+}
+
+#third-block li {
+    display: flex;
+    flex-direction: row;
+    height: 3.75rem; 
+    
+}
+
+#third-block li div {line-height: 3.3rem;}
+
+#third-block li i {    
+    text-align: center; 
+    line-height: 3.3rem;   
+    width: 1.6rem; 
+    margin-right: 1rem;   
+    font-size: 0.9rem;  
+}
+
+li:nth-of-type(1) i {color:#e64c66;}
+
+li:nth-of-type(2) i {color:#ffab00;}
+
+li:nth-of-type(3) i {color:#00bfdd;}
+
+li:nth-of-type(4) i {color:#7874cf;}    
+
+/******** Side bar fourth-block ***********/
+
+#fourth-block {
+    height: 34.5rem; 
+    padding-top: 4rem;
+    color: #4f5a6f;   
+}
+
+.history-event {
+    display: flex;    
+    height: 10rem;
+    margin-left: 2rem;    
+}
+
+.history-event i,
+.history-container {height: 10rem;}
+
+.history-event i {margin-right: 1rem;} 
+
+.event-info {
+    height: 5rem;
+    width: 13.4rem;    
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+.time-ago {
+    font-size: 1.1rem;
+    padding-top: 1.4rem;    
+}
+
+.event-info span {color: #78829d;}
+
+/*******************  Main content   *******************/
+
+section {
+    width: 112rem;        
+}
+
+section > header {
+    height: 12rem; 
+    background-color: #eef1f7;    
+}
+
+h1 {    
+    margin: 0%;  
+    padding: 0 2rem;  
+    line-height: 7rem;
+    font-size: 2.5rem; 
+    font-weight: lighter;      
+}
+
+section header nav {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 0 2rem;
+    color:#8c97b2;    
+    border-top: 1px solid #dadfea;  
+    border-bottom: 1px solid #dadfea;  
+}
+
+#filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    font-size: 1.2rem;
+    width: 35rem;        
+}
+
+#filters div{    
+    padding: 0.7% 2.5%;
+    text-align: center;     
+    border-radius: 2rem;    
+    border: 1px solid transparent;    
+}
+
+#filters div:hover {
+    color: #ffffff;    
+    background-color: #97b3ce;    
+}
+
+#search-field {
+    width: 40rem;    
+    margin: 0.7rem 0;     
+    font-size: 1.5rem;    
+    border-radius: 3rem;
+    background-color: #ffffff;
+    border: 1px solid #c7cddb;
+}
+
+#search-field input {
+    outline: none;
+    border:none;
+    width: 80%;
+    margin: 2% 5%;
+}
+
+.books-container {
+    height: 78rem;
+    overflow: scroll;    
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;     
+}
+
+.row {
+    display: flex;
+    flex-direction: row;    
+    margin-bottom: 3rem;
+    justify-content: space-between;       
+}
+
+.books {
+    width: 20rem;
+    height: 35rem;
+    background-color: #f9fafd;
+    border: 1px solid #e0e2e9;
+}
+
+/*******************  Footer   *******************/
+
+footer {
+    border-radius: 0 0 1rem 1rem;
+    background-color: #181e2c;
+}
+
+footer button{
+    width: 5.5rem;
+    height: 4.5rem;
+    color: #ffffff;
+    outline: none;
+    border: 1px solid transparent;      
+}
+
+#settings {
+    border-radius: 0 0 1rem 0;
+    background-color: #15a4fa;     
+}
+
+#settings:hover {
+    color: #046bac;
+}
+
+#questions {    
+    background-color: #1f2637;     
+}
+
+#questions:hover {    
+    background-color: #3c445a;     
+}
+
+
