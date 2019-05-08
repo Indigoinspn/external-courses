@@ -73,16 +73,16 @@
     <!--  ********* NAV BAR and DROPDOWN MENU ********* -->
 
     <header>HEADER GOES HERE</header>
-    <nav id="dropdown-menu" class="">
+    <nav id="dropdown-menu">
         <div id="container">
-            <a class="" href="#" target="_blank"> Menu 1</a>
-            <a class="" href="#" target="_blank"> Menu 2</a>
-            <a class="" href="#" target="_blank"> Menu 3</a>
-            <a class="" href="#" target="_blank"> Menu 4</a>
-            <a class="" href="#" target="_blank"> Menu 5</a>
+            <a href="#" target="_blank"> Menu 1</a>
+            <a href="#" target="_blank"> Menu 2</a>
+            <a href="#" target="_blank"> Menu 3</a>
+            <a href="#" target="_blank"> Menu 4</a>
+            <a href="#" target="_blank"> Menu 5</a>
         </div>
 
-        <div id="top-menu" class="" >Top menu</div>
+        <div id="top-menu">Top menu</div>
     </nav>
 
     <script>
@@ -91,20 +91,19 @@
 
         var topMenu = document.getElementById("top-menu");
         var container = document.getElementById("container");
-        var dropDownMenu = document.getElementById("dropdown-menu");
-        
+        var dropDownMenu = document.getElementById("dropdown-menu");        
 
-        /************ functions TOP MENU BUTTON HOVER ************/
+        /****** functions TOP MENU BUTTON HOVER *******/
 
         function addShadow () {
             var dispValue = container.style.display; 
             
             if (dispValue === "block") {
-                topMenu.classList.add("bg-color");
-                return;
+                topMenu.classList.add("bg-color");                
             }
-
-            dropDownMenu.classList.add("shadow");
+            else {
+                dropDownMenu.classList.add("shadow")
+            }            
         }
 
         function removeShadow () {
@@ -117,9 +116,9 @@
             }        
         }
 
-        /********** functions SHOW /HIDE MENU ITEMS onclick **********/
+        /***** function TOGGLE MENU ITEMS onclick ********/
 
-        function menuShowOrHide() { 
+        function menuToggle() { 
             var dispValue = container.style.display;           
 
             if (dispValue === "block") {
@@ -132,22 +131,19 @@
             }
         }        
 
-        /************************ EVENT LISTENERS ****************************/
+        /************* EVENT LISTENERS ****************/
 
         topMenu.addEventListener("mouseover", addShadow);
         topMenu.addEventListener("mouseout", removeShadow);
-        topMenu.addEventListener("click", menuShowOrHide);     
+        topMenu.addEventListener("click", menuToggle);     
 
          /***** (Delegation) MENU ITEM HOVER *****/
 
         container.onmouseover = function (event) {
-
             var target = event.target;
             var aTag = target.closest('a');
 
-            if (!aTag) return;
-
-            if (!container.contains(aTag)) return;
+            if (!aTag || !container.contains(aTag)) return;            
 
             addBgColor(aTag);
         }    
@@ -160,9 +156,7 @@
             var target = event.target;
             var aTag = target.closest('a');
 
-            if (!aTag) return;
-
-            if (!container.contains(aTag)) return;
+            if (!aTag || !container.contains(aTag)) return;            
 
             removeBgColor(aTag);
         }  
