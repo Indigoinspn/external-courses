@@ -1,8 +1,8 @@
 function Hangman(initWord) {
-    var worToGuess,
-        wordArr = [],
-        errNum = 6,
-        wrongSymbols = [],
+    var wordToGuess,
+        wordArr,
+        errNum,
+        wrongSymbols,
         guessResult;
 
     this.getGuessResult = function () {
@@ -10,17 +10,20 @@ function Hangman(initWord) {
     }
 
     function startGame(word) {
-        worToGuess = word;
-        wordArr.length = worToGuess.length; //create array for word to guess
-        wordArr.fill("_");
-        guessResult = wordArr.toString().replace(/,/g, ""); // stringify array                      
+        wordToGuess = word;
+        wordArr = [];
+        wordArr.length = wordToGuess.length; //create array for word to guess
+        wordArr.fill("_");  
+        errNum = 6;
+        wrongSymbols = [];        
+        guessResult = wordArr.toString().replace(/,/g, ""); // stringify array                            
     }
 
     startGame(initWord);
 
     this.guess = function (letter) {
         var startIndex = 0;
-        var letterIndex = worToGuess.indexOf(letter, startIndex);
+        var letterIndex = wordToGuess.indexOf(letter, startIndex);
 
         if (letterIndex === -1) {// if letter was not found
             errNum--;
@@ -36,7 +39,7 @@ function Hangman(initWord) {
             wordArr[letterIndex] = letter;// add guessed letters to the array
             this.getGuessResult(); // stringify array
             startIndex = letterIndex + 1;
-            letterIndex = worToGuess.indexOf(letter, startIndex);
+            letterIndex = wordToGuess.indexOf(letter, startIndex);
         }
         this.getGuessedString();//return message with guess result 
         return this;               
@@ -59,9 +62,7 @@ function Hangman(initWord) {
     }
 
     this.startAgain = function (newWord) {
-        startGame(newWord);
-        errNum = 6;
-        wrongSymbols = [];
+        startGame(newWord);        
     }
 }    
 
