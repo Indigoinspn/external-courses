@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task-02.html - Dropdown Menu </title>
+
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 0.625rem;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        header {
+            z-index: 1;
+            position: relative;
+            height: 7rem;
+            width: 100%;
+            padding: 1%;
+            font-size: 2.5rem;
+            text-align: center;
+            background-color: #e4e4e4;
+            border: 2px solid rgb(212, 212, 212);
+        }
+
+        nav {
+            z-index: 0;
+            position: relative;
+            margin-left: 20%;
+            text-align: center;
+            font-size: 2.5rem;
+            width: 18.5rem;
+            color: #ffffff;
+            background-color: #35baf5;
+            border-radius: 0px 0px 15px 15px;
+            border: 1px solid #3db2e6;            
+        }
+
+        #top-menu {
+            border-radius: 0px 0px 15px 15px;
+            cursor: pointer;
+        }
+
+        #top-menu, nav a  {padding: 3% 0%;}       
+
+        .border-top {border-top: 3px solid #73bffb;}
+
+        #container {display: none;}
+
+        a {
+            display: block;            
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .bg-color {background-color: #2a97c5;}
+
+        .shadow {box-shadow: 0px 0px 5px 8px #c0eafc;}
+
+    </style>
+</head>
+
+<body>
+
+    <!--  ********* NAV BAR and DROPDOWN MENU ********* -->
+
+    <header>HEADER GOES HERE</header>
+    <nav id="dropdown-menu">
+        <div id="container">
+            <a href="#" target="_blank"> Menu 1</a>
+            <a href="#" target="_blank"> Menu 2</a>
+            <a href="#" target="_blank"> Menu 3</a>
+            <a href="#" target="_blank"> Menu 4</a>
+            <a href="#" target="_blank"> Menu 5</a>
+        </div>
+
+        <div id="top-menu">Top menu</div>
+    </nav>
+
+    <script>
+
+        /************************ SCRIPT ****************************/
+
+        var topMenu = document.getElementById("top-menu");
+        var container = document.getElementById("container");
+        var dropDownMenu = document.getElementById("dropdown-menu");        
+
+        /****** functions TOP MENU BUTTON HOVER *******/
+
+        function addShadow () {
+            var dispValue = container.style.display; 
+            
+            if (dispValue === "block") {
+                topMenu.classList.add("bg-color");                
+            }
+            else {
+                dropDownMenu.classList.add("shadow")
+            }            
+        }
+
+        function removeShadow () {
+            var dispValue = container.style.display; 
+
+            topMenu.classList.remove("bg-color");            
+
+            if (dispValue === "" || dispValue === "none") {
+                dropDownMenu.classList.remove("shadow");                
+            }        
+        }
+
+        /***** function TOGGLE MENU ITEMS onclick ********/
+
+        function menuToggle() { 
+            var dispValue = container.style.display;           
+
+            if (dispValue === "block") {
+                container.style.display = "none";
+                topMenu.classList.remove("border-top");
+            }
+            else {
+                container.style.display = "block"; 
+                topMenu.classList.add("border-top");                             
+            }
+        }        
+
+        /************* EVENT LISTENERS ****************/
+
+        topMenu.addEventListener("mouseover", addShadow);
+        topMenu.addEventListener("mouseout", removeShadow);
+        topMenu.addEventListener("click", menuToggle);     
+
+         /***** (Delegation) MENU ITEM HOVER *****/
+
+        container.onmouseover = function (event) {
+            var target = event.target;
+            var aTag = target.closest('a');
+
+            if (!aTag || !container.contains(aTag)) return;            
+
+            addBgColor(aTag);
+        }    
+
+        function  addBgColor(item) {            
+            item.classList.add("bg-color");
+        }    
+
+        container.onmouseout = function (event) {
+            var target = event.target;
+            var aTag = target.closest('a');
+
+            if (!aTag || !container.contains(aTag)) return;            
+
+            removeBgColor(aTag);
+        }  
+
+        function  removeBgColor(item) {            
+            item.classList.remove("bg-color");
+        } 
+        
+    </script>
+</body>
+
+</html>
