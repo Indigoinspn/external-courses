@@ -2,7 +2,7 @@
 
 html {
     box-sizing: border-box;   
-    font-size:0.625rem;      /* 10px*/
+    font-size:0.625rem;      /* 10px*/   
 }
 
 *, *:before, *:after {
@@ -10,7 +10,8 @@ html {
 }
 
 body {
-    margin: 0%;
+    margin: 0%;    
+    height:100vh; 
     font-size: 1.6rem;
     font-family: sans-serif;
     display: flex;
@@ -40,7 +41,8 @@ body {
 
 
 body > header, body > footer {
-    width: 132rem;
+   /* width: 132rem;*/
+    width: 100%;
     height: 4.5rem; 
     display:flex;
     flex-flow: nowrap row;
@@ -48,7 +50,8 @@ body > header, body > footer {
 }
 
 body > main {
-    display: flex;    
+    display: flex; 
+    height:100%;   
 }
 
 /***********************  TOP HEADER  ***********************/
@@ -108,8 +111,8 @@ body > header button:hover {
 
 /***********************  Side Bar  ***********************/
 
-main > nav {
-    height: 90rem;
+main > nav {   
+    height: 100%;
     width: 20rem;
     color: #78829d;
     background-color: #1f2637;
@@ -145,9 +148,7 @@ main > nav {
 
 /********  Side bar second-block  ***********/
 
-#second-block {
-    height: 24.5rem;    
-}
+#second-block {height: 24.5rem;}
 
 #second-block div {
     height: 4rem;
@@ -202,8 +203,8 @@ li:nth-of-type(4) i {color:#7874cf;}
 
 /******** Side bar fourth-block ***********/
 
-#fourth-block {
-    height: 34.5rem; 
+#fourth-block {  
+    height: 100%; 
     padding-top: 4rem;
     color: #4f5a6f;   
 }
@@ -235,11 +236,10 @@ li:nth-of-type(4) i {color:#7874cf;}
 
 /*******************  Main content   *******************/
 
-section {
-    width: 112rem;        
-}
+/*section {width: 112rem;}*/ 
 
 section > header {
+    width: 100%;
     height: 12rem; 
     background-color: #eef1f7;    
 }
@@ -298,13 +298,16 @@ section header nav {
     margin: 2% 5%;
 }
 
-#books-container {
-    height: 78rem;
-    overflow: scroll;    
-    padding: 3rem 0;
+#books-container {    
+    height: calc(100% - 12rem);
+    overflow-y: scroll;  
+    overflow-x: hidden;   
+    padding: 3rem 2rem;
     display: flex;
-    flex-flow: wrap row; 
-    justify-content: space-between; 
+    flex-flow: wrap row;    
+    align-content: flex-start;
+    justify-content: space-evenly;
+    
 }
 
 .book  {
