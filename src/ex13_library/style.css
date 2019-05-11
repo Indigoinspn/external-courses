@@ -236,7 +236,7 @@ li:nth-of-type(4) i {color:#7874cf;}
 
 /*******************  Main content   *******************/
 
-/*section {width: 112rem;}*/ 
+/*section {width: 100%;}*/
 
 section > header {
     width: 100%;
@@ -353,19 +353,23 @@ section header nav {
     background-image: url(filled_whole_star.png);
 }
 
-.star-left-side-filled, .star-right-side-empty {  
+.star-filled,.star-empty {  
     width: 0.7rem;    
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;    
 }
 
-.star-left-side-filled {
-    background-image: url(filled_left_side_star.png);   
+.mirror {
+    transform: scaleX(-1);
 }
 
-.star-right-side-empty {
-    background-image: url(empty_right_side_star.png);    
+.star-filled {
+    background-image: url(filled_star.png);   
+}
+
+.star-empty {
+    background-image: url(empty_star.png);   
 }
 
 /*******************  Footer   *******************/

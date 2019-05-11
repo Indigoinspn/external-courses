@@ -131,19 +131,85 @@ function renderBooks(item, i) {
   var halfEmptyStars = emptyStars - wholeEmptyStars;
   var k;
 
+  /***********   Everage User's rating  ************/
+
   //whole stars
   for (k = 0; k < wholeFilledStars; k++) {
-    starRateContainer.innerHTML += " <div class=\"star-whole-filled\"></div> <span> &nbsp;</span>";
+    starRateContainer.innerHTML += " <div class=\"star star-filled\"></div>" +
+      "<div class=\"star mirror star-filled\"></div><span> &nbsp;</span>";
   }
   //half empty stars
   if ((halfEmptyStars > 0) & (halfEmptyStars < 1)) {
-    starRateContainer.innerHTML += " <div class=\"star-left-side-filled\"></div>" +
-      "<div class=\"star-right-side-empty\"></div><span> &nbsp;</span>";
+    starRateContainer.innerHTML += " <div class=\"star star-filled\"></div>" +
+      "<div class=\"star mirror star-empty\"></div><span> &nbsp;</span>";
   }
   //whole empty stars
   for (k = 0; k < wholeEmptyStars; k++) {
-    starRateContainer.innerHTML += " <div class=\"star-whole-empty\"></div> <span> &nbsp;</span>";
+    starRateContainer.innerHTML += " <div class=\"star star-empty\"></div>" +
+      "<div class=\"star mirror star-empty\"></div><span> &nbsp;</span>";
   }
 };
 
 dataBooks.forEach(renderBooks);
+
+/***********   User rating  ************/
+
+var starRateContainer = document.querySelector(".star-rating-container");
+var stars = document.querySelectorAll(".star");
+var selectedStarIndex;
+var filledStarIndex = 0;
+var startIndex;
+
+starRateContainer.onclick = function (event) {
+  var target = event.target;
+  
+  if (!target.classList.contains("star")) return;  
+
+  target.classList.add("selected");
+  findIndexOfSelectedStar(target)
+  return;
+}
+
+function findIndexOfSelectedStar(target) {
+
+  for (var k = 0; k < stars.length; k++) {
+    if (stars[k].classList.contains("selected")) {
+      selectedStarIndex = k; // saving selected star index
+      target.classList.remove("selected"); 
+
+      // if clicked on the same star     
+      if (filledStarIndex === selectedStarIndex) {
+        selectedStarIndex = 0;
+        clearStars(selectedStarIndex, filledStarIndex, stars); // reseting rating
+        filledStarIndex = 0;       
+      }
+      // if clicked on one of the following stars 
+      else if (filledStarIndex < selectedStarIndex) {
+        fillStars(filledStarIndex, selectedStarIndex, stars);
+        filledStarIndex = selectedStarIndex;    
+      }
+      // if clicked on one of the previous stars 
+      else if (filledStarIndex > selectedStarIndex) {
+        clearStars(selectedStarIndex + 1, filledStarIndex, stars);
+        filledStarIndex = selectedStarIndex;        
+      }
+    }
+  }
+  return filledStarIndex;
+}
+
+function fillStars(start, finish, arr) {
+  for (var i = start; i <= finish; i++) {
+    arr[i].classList.add("star-filled");
+    arr[i].classList.remove("star-empty");
+  }
+}
+
+function clearStars(start, finish, arr) {
+  for (var i = start; i <= finish; i++) {
+    arr[i].classList.add("star-empty");
+    arr[i].classList.remove("star-filled");
+  }
+}
+
+
