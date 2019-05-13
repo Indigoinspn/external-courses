@@ -1,0 +1,31 @@
+body {margin: 100px;}
+
+div {
+    width: 270px;
+    height: 80px;
+    background-color: #cbcbcb;
+    border:2px solid #666666;
+    border-radius: 22px;
+    text-align: center;
+    line-height: 94px; 
+    box-shadow: 0 0 0 2px #ffffff inset;               
+}
+
+button {
+    width: 250px;
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    color: #555555;
+    background-image: linear-gradient(#f5f3f3, #b3b3b3);
+    border: 0.5px solid #616161;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #8f8f8f;
+    outline: none;                     
+}
+
+.stars {
+    font-size: 30px;
+    color:#888888;
+}

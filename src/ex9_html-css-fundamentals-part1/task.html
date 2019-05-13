@@ -1,125 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>ex9_task.html_Form</title>
-    <style>
-
-        body {
-            font-family: 'Merriweather Sans', sans-serif;
-            margin: 5% 30%;
-            font-size: 16px;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: 70px 36px 84px 180px 30px 15px 190px;
-            grid-template-rows: 50px 40px 40px 40px 91px 60px;
-            grid-row-gap: 25px;
-        }
-
-        header {
-            grid-column: 1 / span 7;
-            border-bottom: 2px solid #000000;
-        }
-
-        #heading {
-            font-size: 1.375em;
-            color: #000000;
-        }
-
-        header div {
-            font-size: 0.8125em;
-            color: #ff4949;
-            font-weight: bold;
-        }
-
-        label[for] {
-            grid-column: 1 / 1;
-            line-height: 40px;
-        }
-
-        label[for*="msg"] {
-            grid-column: 1 / 1;
-            line-height: 20px;
-        }
-
-        #name,
-        #email,
-        #web,
-        #msg {
-            border: 2px solid #878788;
-            border-radius: 7px;
-            grid-column: 3 / span 2;
-            padding: 15px;
-            outline: none;
-            background-color: #ffffff;
-        }
-
-        #msg {
-            word-wrap: break-word;
-        }
-
-        input::placeholder {
-            color: #cecece;
-        }
-
-        input:focus {
-            background-color: #cecece;
-        }
-
-        .hint {
-            grid-column: 7 / span 1;
-            display: flex;
-        }
-
-        .arrow-left {
-            width: 0;
-            height: 0;
-            border-top: 7px solid transparent;
-            border-bottom: 7px solid transparent;
-            border-right: 7px solid #d45252;
-            margin: 13px 0;
-        }
-
-        .arrow-body {
-            width: 135px;
-            height: 25px;
-            margin: 7px 0;
-            background-color: #d45252;
-            text-align: center;
-            font-size: 0.8125em;
-            line-height: 25px;
-            color: #ffffff;
-        }
-
-        #butt-cell {
-            grid-column: 2 / span 2;
-        }
-
-        button {
-            font-family: 'Merriweather Sans', sans-serif;
-            background-color: #f4f4f4;
-            border-radius: 7px;
-            font-weight: bold;
-            height: 35px;
-            width: 120px;
-            box-shadow: 0 0 0 1px #bebebf;
-            outline: none;
-        }
-
-        .border {
-            border: 1px solid #bebebf;
-        }
-
-    </style>
-
 </head>
-
 <body>
 
     <form class="grid-container">
@@ -179,5 +67,4 @@
 
     </script>
 </body>
-
 </html>

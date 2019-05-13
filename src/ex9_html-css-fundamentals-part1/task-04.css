@@ -1,0 +1,61 @@
+body {margin: 50px;}
+
+div {
+    width: 500px;
+    height: 300px;
+}
+
+/* approach 1 - relative positioning */
+
+#bottom-layer {
+    background-color: #c3d8c7;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+#middle-layer {
+    background-color: #95be9b;
+    position: relative;
+    top: -20px;
+    left: -20px;
+}
+
+#top-layer {
+    background-color: #6fa878;
+    position: relative;
+    top: -20px;
+    left: -20px;
+}
+
+/* approach 2 - absolute positioning */
+
+#bottom-layer-absolute {
+    background-color: #c3d8c7;
+    position: absolute;
+    top: 460px;
+    left: 100px;
+}
+
+#middle-layer-absolute {
+    background-color: #95be9b;
+    position: absolute;
+    top: 440px;
+    left: 80px;
+}
+
+#top-layer-absolute {
+    background-color: #6fa878;
+    position: absolute;
+    top: 420px;
+    left: 60px;
+}
+
+/* approach 3 - double shadow */
+
+#block-two-shadow {
+    background-color: #6fa878;
+    margin-top: 430px; 
+    margin-left: 10px;   
+    box-shadow: 20px 20px #95be9b, 40px 40px #c3d8c7;
+}
