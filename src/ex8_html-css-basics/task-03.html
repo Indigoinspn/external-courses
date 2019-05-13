@@ -1,147 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ex8_task-03.html</title>
+
     <style>
-        #b-1 {
-            border-style: dotted;
-            border-color: rgb(204, 126, 235)
-        }
+        body {margin-left: 100px;}
 
-        #b-2 {
-            border-style: dashed;
-            border-color: rgb(139, 190, 238)
-        }
+        #border-simple {
+            border: 2px solid #e35d6f;
+            background-color: #faecd9;
+        }       
 
-        #b-3 {
-            border-style: solid;
-            border-color: rgb(75, 57, 241);
-            border-radius: 20px;
-        }
-
-        #b-4 {
-            border-style: double;
-            border-color: rgb(22, 141, 156)
-        }
-
-        #b-5 {
-            border-style: groove;
-        }
-
-        #b-6 {
-            border-style: ridge;
-        }
-
-        #b-7 {
-            border-style: inset;
-        }
-
-        #b-8 {
-            border-style: outset;
-        }
-
-        #b-9 {
-            border-style: dotted dashed solid double;
-            border-color: rgba(20, 89, 238, 0.5)
-        }
-
-        #b-10 {
-            border-top: 1px double royalblue;
-        }
-
-        #b-11 {
-            border-right: 1px double royalblue;
-        }
-
-        #b-12 {
-            border-bottom: 1px double royalblue;
-        }
-
-        #b-13 {
-            border-left: 1px double royalblue;
-        }
-
-        #b-14 {
-            outline: 5px dotted rgba(241, 8, 230, 0.5);
+        #border-outline {
+            outline: 5px dotted #e35d6f;;
             outline-offset: 5px;
-            border: 5px dotted rgb(204, 126, 235);
+            background-color: #b5b0b0;            
         }
 
-        #b-15 {
-            background-color: rgb(34, 214, 205);
+        #border-shadow {
+            background-color:#e35d6f;
+            box-shadow: 0 0 1px 5px #b5b0b0;
         }
 
-        #b-16 {
-            background-color: rgb(139, 159, 224);
-            padding: 10px;
+        #front-element{
+            z-index: 1;
+            position: relative;
+            background-color: #b5b0b0; 
         }
 
-        #b-16-2 {
-            width: 95%;
-            padding: 10px;
-            margin: auto;
-            background-color: white;
+        #back-element {
+            position: relative;            
+            width: 110px;
+            height: 28px;
+            right: 5px;
+            bottom:60px;            
+            background-color: #e35d6f;                     
         }
 
-        #b-17 {           
+        #bg-inner {           
+            background-color: #b5b0b0;  
+            margin: auto;          
+        }
+
+        #bg-outer{
+            background-color: #e35d6f;
+            width:120px; 
+        }
+
+        #border-image {           
             border: 10px solid transparent;
             padding: 20px;
             border-image: url(https://i.pinimg.com/564x/d2/60/f8/d260f86659d2ef988e3b76b0896f2b89.jpg) 31% repeat;
             text-align: center;
-            line-height: 20px; 
-                   
-        } 
+            line-height: 20px;                    
+        }        
 
-        #b-18 {  
-            background-image: url(https://i.pinimg.com/564x/33/83/52/338352bfbd1133cc3f07c51cd55b1cbd.jpg);
-            width:500px;
-            height:200px;
-            background-position: center center;
-            border: 1px solid rgb(62, 59, 63);
+        div {            
+            width: 100px;
+            margin: 2% 0;
+            padding: 10px;
             text-align: center;
-            line-height: 200px;
-        }      
-
-        div {
-            width: 30%;
-            margin: 2% 5%;
         }
-    </style>
 
+    </style>
 </head>
 
-<body>
-    <!--Придумайте и реализуйте не менее 5 способов создания рамки вокруг обычного <div>. Используйте только средства CSS.-->
+<body>  
 
+    <h1>Border first - border</h1>
+    <div id="border-simple"> Content </div>
 
-    <div id="b-1"> Content </div>
-    <div id="b-2"> Content </div>
-    <div id="b-3"> Content </div>
-    <div id="b-4"> Content </div>
-    <div id="b-5"> Content </div>
-    <div id="b-6"> Content </div>
-    <div id="b-7"> Content </div>
-    <div id="b-8"> Content </div>
-    <div id="b-9"> Content </div>
-    <div id="b-10"> Content </div>
-    <div id="b-11"> Content </div>
-    <div id="b-12"> Content </div>
-    <div id="b-13"> Content </div>
-    <div id="b-14"> Content </div>
-    <div id="b-15">Content </div>
-    <div id="b-16">
-        <div id="b-16-2">
-            Content
-        </div>
+    <h1>Border second - outline</h1>
+    <div id="border-outline"> Content </div>
+
+    <h1>Border third - box shadow</h1>
+    <div id="border-shadow"> Content </div>
+
+    <h1>Border fourth - relative positioning</h1>
+    <div id="front-element"> Content </div>
+    <div id="back-element"> Content </div>
+
+    <h1>Border fifth - div in div</h1>
+    <div id="bg-outer"> 
+        <div id="bg-inner"> Content </div> 
     </div>
-    <div id="b-17">Content </div>
-    <div id="b-18">Content </div>
 
+    <h1>Border sixth - border image</h1>
+    <div id="border-image"> Content </div>   
 
 </body>
-
 </html>

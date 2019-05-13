@@ -1,9 +1,6 @@
+#parent {font-size: 30px;}
 
-#parent {
-    font-size: 30px;
-}
-
-#b-1 {
+#block-1 {
     font-family: 'Sacramento', cursive;
     background-color: #f2808e;
     font-size: 1.2rem;
@@ -13,10 +10,9 @@
     text-indent: 60px;
     text-align: justify;
     line-height: 2;
-
 }
 
-#b-2 {            
+#block-2 {            
     color: white;
     text-indent: 20px;
     text-align: right;
@@ -24,7 +20,7 @@
     background-size: cover;
 }
 
-#b-3 {
+#block-3 {
     font-family:  "Comic Sans MS", cursive, sans-serif;
     border: 3px solid transparent;
     background-color: rgba(75, 57, 241, 0.2);
@@ -32,7 +28,7 @@
     text-align: center;
 }
 
-#b-4 {
+#block-4 {
     border-style: double;
     background-color: plum;
     font-size: 0.4em;
@@ -40,22 +36,21 @@
     line-height: 2;
 }
 
-#b-5 {
+#block-5 {
     font-family: "Courier New", Courier, monospace;
     border-bottom: double;
     font-size: 40%;
     letter-spacing: 5px;
 }
 
-#b-6 {
-    
+#block-6 {    
     font-family: 'Gloria Hallelujah', cursive;
     border-style: ridge;
     font-size: 120%;
     text-decoration: line-through rgb(231, 19, 54) solid;
 }
 
-#b-7 {
+#block-7 {
     font-size: 1.5rem;
     font-family: 'Zeyada', cursive;
     border-top: 2px solid rgb(180, 75, 14);
