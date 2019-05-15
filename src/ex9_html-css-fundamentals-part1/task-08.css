@@ -1,0 +1,63 @@
+body {padding: 30px;}
+
+header,
+article,
+section,
+.module {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+article {
+    background: white;
+    margin: 0 0 1rem 0;
+}
+
+/************** Grid declarations goes here ***************/
+
+.grid {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-bottom: 50px;
+}
+
+.grid header {
+    background: lightblue;
+    grid-column: 1 / span 4;
+}
+
+.grid section {
+    background: lightgreen;    
+    grid-column: 1 / span 3;
+}        
+
+.grid aside {
+    background: pink;    
+    grid-column: 4 / span 1;
+    text-align: justify;
+}      
+
+/************** Flex declarations goes here ***************/
+
+.flex {
+    display: flex; 
+    flex-direction: column;
+}
+
+.flex header {background: lightblue;}
+
+.flex .row {
+    display: flex;     
+}
+
+.flex section {   
+    background: lightgreen;    
+    flex-basis: 75%;   
+}
+
+.flex aside {
+    background: pink; 
+    text-align: justify;   
+    flex-basis: 25%;
+}

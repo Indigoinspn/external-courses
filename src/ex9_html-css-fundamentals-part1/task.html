@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>ex9_task.html_Form</title>
+</head>
+<body>
+
+    <form class="grid-container">
+        <header>
+            <div id="heading">Form Here</div>
+            <div> &ast; required fields</div>
+        </header>
+
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" placeholder="placeholder text" required>
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email" placeholder="placeholder text" required>
+
+        <div class="hint">
+            <div class="arrow-left"></div>
+            <div class="arrow-body">Form field hint</div>
+        </div>
+
+        <label for="web">Website:</label>
+        <input id="web" type="url" name="website" placeholder="placeholder text" required>
+
+        <div class="hint">
+            <div class="arrow-left"></div>
+            <div class="arrow-body">Form field hint</div>
+        </div>
+
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="message" rows="5" required></textarea>
+
+        <div id="butt-cell">
+            <button id="butt" class="border" type="submit" onmouseover="colorDark()" onmouseout="colorOrigin()"
+                onmousedown="borderInset()" onmouseup="borderOrigin()"> Submit </button>
+        </div>
+
+    </form>
+
+    <script defer>
+
+        function colorDark() {
+            document.getElementById('butt').style.backgroundColor = "#d0cbcb";
+        }
+
+        function colorOrigin() {
+            document.getElementById('butt').style.backgroundColor = "#f4f4f4";
+        }
+
+        function borderInset() {
+            butt.classList.remove("border");
+            document.getElementById('butt').style.color = "#d45252";
+        }
+
+        function borderOrigin() {
+            butt.classList.add("border");
+            document.getElementById('butt').style.color = "#000000";
+        }
+
+    </script>
+</body>
+</html>
