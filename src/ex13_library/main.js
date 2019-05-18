@@ -1,5 +1,3 @@
-document.body.style.overflow = "hidden";
-
 var dataBooks = [/*
     */{
     "id": "1",
@@ -113,155 +111,141 @@ var dataBooks = [/*
   }
 ];
 
+function roundNum(num) {
+  return Math.round(Math.floor(num));
+}
+
 var booksContainer = document.getElementById("books-container");
 
-function renderBooks(item, i) {
+function renderBook(item, i) {
+  var starRate = item.rating,
+      wholeFilledStars = roundNum(starRate),
+      emptyStars = 5 - starRate,
+      wholeEmptyStars = roundNum(emptyStars),
+      halfEmptyStars = emptyStars - wholeEmptyStars,
+      htmlForStar;
+
   booksContainer.innerHTML += "<div id=\"book-number-" + item.id + "\" class=\"book\">" +
     "<img src=\"" + item.image_url + "\" alt=\"Image of Book\">" +
     "<div class=\"book-title\">" + item.title + "</div>" +
     "<div class=\"book-author\"> by " + item.author.firstName + " " + item.author.lastName + "</div>" +
     "<div class=\"star-rating-container\"  data-book-id = \"" + item.id + "\" > </div></div>";
 
-  var starRate = item.rating;
-  var starRateContainer = booksContainer.getElementsByClassName("star-rating-container")[i];
-
-  var wholeFilledStars = Math.round(Math.floor(starRate));
-  var emptyStars = 5 - starRate;
-  var wholeEmptyStars = Math.round(Math.floor(emptyStars));
-  var halfEmptyStars = emptyStars - wholeEmptyStars;
-  var k;
-
-  /***********   Everage User's rating  ************/
-
-  //whole stars
-  for (k = 0; k < wholeFilledStars; k++) {
-    starRateContainer.innerHTML += " <div class=\"star star-filled\"></div>" +
-      "<div class=\"star mirror star-filled\"></div><span> &nbsp;</span>";
-  }
-  //half empty stars
+  var starRateContainer = booksContainer.getElementsByClassName("star-rating-container")[i]; 
+  
+  htmlForStar = " <div class=\"star star-filled\"></div>" +
+    "<div class=\"star mirror star-filled\"></div>";
+  starRateContainer.innerHTML += htmlForStar.repeat(wholeFilledStars);
+  
   if ((halfEmptyStars > 0) & (halfEmptyStars < 1)) {
     starRateContainer.innerHTML += " <div class=\"star star-filled\"></div>" +
-      "<div class=\"star mirror star-empty\"></div><span> &nbsp;</span>";
+    "<div class=\"star mirror star-empty\"></div>";
   }
-  //whole empty stars
-  for (k = 0; k < wholeEmptyStars; k++) {
-    starRateContainer.innerHTML += " <div class=\"star star-empty\"></div>" +
-      "<div class=\"star mirror star-empty\"></div><span> &nbsp;</span>";
-  }
-};
 
-dataBooks.forEach(renderBooks);
+  htmlForStar = " <div class=\"star star-empty\"></div>" +
+    "<div class=\"star mirror star-empty\"></div>";
+  starRateContainer.innerHTML += htmlForStar.repeat(wholeEmptyStars)  
+}
+
+dataBooks.forEach(renderBook);
 
 /***************************   User rating  *******************************/
 
-var bookId,
-    bookIndex,
-    bookRatingValue,
-    starSelector,
-    stars, // NodeList
-    selectedStarIndex,
-    filledStarIndex;
-    
-
-function getBookRating (bookIndex) {
-  if (dataBooks[bookIndex].rating === 0){
-    filledStarIndex = 0;
-  }
-  else {
-    filledStarIndex = dataBooks[bookIndex].rating * 2 -1; //filledStarIndex - define array index of selected star half
+function getBookRating(bookIndex) { 
+  var rating; 
+  if (dataBooks[bookIndex].rating === 0) rating = 0;     
+  
+  else {    
+    rating = dataBooks[bookIndex].rating * 2 - 1;
   }  
-  return filledStarIndex;
+  return rating;
 }
 
-function setBookRating (bookIndex, bookRatingValue) {
-  dataBooks[bookIndex].rating = bookRatingValue;        
+function setBookRating(bookIndex, bookRatingValue) {
+  dataBooks[bookIndex].rating = bookRatingValue;
   return bookRatingValue;
 }
-
 /**************** Onclick event listener *****************/
 
 booksContainer.onclick = function (event) {
-  var target = event.target; 
-  
-  if (!target.classList.contains("star")) return; 
-  
-  bookIndex = target.parentNode.attributes[1].value - 1; // define selected book index   
-  getBookRating (bookIndex); // get rating from dataBooks array and save to filledStarIndex    
+  var target = event.target,
+      bookIndex = target.parentNode.attributes[1].value - 1,
+      bookId,
+      starSelector,  
+      stars,
+      filledStarIndex,
+      selectedStarIndex,
+      bookRatingValue;       
 
-  target.classList.add("selected"); // mark target star with the  "SELECTED" class
+  if (!target.classList.contains("star")) return;
+  
+  filledStarIndex = getBookRating(bookIndex);   
 
-  bookId = "book-number-" + target.parentNode.attributes[1].value; 
+  bookId = "book-number-" + target.parentNode.attributes[1].value;
   starSelector = "#" + bookId + " .star";
-  stars = document.querySelectorAll(starSelector); // define target star array 
+  stars = Array.from(document.querySelectorAll(starSelector));  
 
+  target.classList.add("selected"); 
+  selectedStarIndex = findIndexOfSelectedStar(stars)
+  target.classList.remove("selected");
   
-  findIndexOfSelectedStar(target,bookIndex);
+  displayUserStarRatingChoice(bookIndex, filledStarIndex, selectedStarIndex, stars, bookRatingValue);
 }
 
+function findIndexOfSelectedStar(stars) {
+  for (var k = 0; k < stars.length; k++) {
+    if (stars[k].classList.contains("selected")) return k;     
+  }
+  return;   // eslint-disable-line
+}
 /************ LOGIC: Fill or Clear star *************/
 
-function findIndexOfSelectedStar(target,bookIndex) {
+function displayUserStarRatingChoice(bookIndex, filledStarIndex, selectedStarIndex, stars, bookRatingValue) {
+  
+  if (filledStarIndex === selectedStarIndex) {
 
-  for (var k = 0; k < stars.length; k++) {
-    if (stars[k].classList.contains("selected")) {     
-      selectedStarIndex = k;                  
-      target.classList.remove("selected"); // remove target mark 
-        
-      // clicked on the same star  or if conflict: bookRating 0 and filledStarIndex = selectedStarIndex = 0. 
-      //( 0 = index of fist star half = 0.5 bookRating) 
-
-      if (filledStarIndex === selectedStarIndex) {
-
-        if (filledStarIndex === 0) { 
-          bookRatingValue = 0.5;
-          fillStars(filledStarIndex, selectedStarIndex, stars);
-        }
-        else {
-          selectedStarIndex = 0;
-          bookRatingValue = 0;
-          clearStars(selectedStarIndex, filledStarIndex, stars); 
-        }               
-      }
-      //clicked on one of following stars   
-      else if (filledStarIndex < selectedStarIndex) {  
-        bookRatingValue = (selectedStarIndex + 1)/2;              
-        fillStars(filledStarIndex, selectedStarIndex, stars); 
-      }
-      //clicked on one of the previous stars 
-      else if (filledStarIndex > selectedStarIndex) {       
-        bookRatingValue = (selectedStarIndex + 1)/2; 
-        clearStars(selectedStarIndex + 1, filledStarIndex, stars); 
-      }      
-      
-      setBookRating (bookIndex, bookRatingValue); // set rating to data array  equal  to selectedStarIndex
-      getBookRating (bookIndex);
-
-      //console.log ("filledStarIndex:  " + filledStarIndex );
-      //console.log ("book rating:  ",dataBooks[bookIndex].rating);
-      //console.log (dataBooks[bookIndex]);     
+    if (filledStarIndex === 0) {
+      bookRatingValue = 0.5;    // eslint-disable-line
+      fillStars(filledStarIndex, selectedStarIndex, stars);
+    }
+    else {
+      selectedStarIndex = 0;   // eslint-disable-line
+      bookRatingValue = 0;      // eslint-disable-line
+      clearStars(selectedStarIndex, filledStarIndex, stars);
     }
   }
-  return selectedStarIndex;
+  
+  else if (filledStarIndex < selectedStarIndex) {
+    bookRatingValue = (selectedStarIndex + 1) / 2;  // eslint-disable-line
+    fillStars(filledStarIndex, selectedStarIndex, stars);
+  }
+  
+  else if (filledStarIndex > selectedStarIndex) {
+    bookRatingValue = (selectedStarIndex + 1) / 2;  // eslint-disable-line
+    clearStars(selectedStarIndex + 1, filledStarIndex, stars);
+  }
+  setBookRating(bookIndex, bookRatingValue);
+  getBookRating(bookIndex);
 }
 
 /************ FUNCTIONS:  Fill or Clear star  *************/
 
-function fillStars(start, finish, arr) {  
-  if (start === 0 & finish === 0) { // if bookRating 0 and initial filledStarIndex = selectedStarIndex = 0 (=index of fist star half)
+function fillStars(start, finish, arr) {
+  if (start === 0 && finish === 0) {
     arr[0].classList.remove("star-empty");
     arr[0].classList.add("star-filled");
   }
   else {
-    for (var i = start; i <= finish; i++) {   
+    for (var i = start; i <= finish; i++) {
       arr[i].classList.remove("star-empty");
-      arr[i].classList.add("star-filled");    
+      arr[i].classList.add("star-filled");
     }
-  }  
+  }
 }
 
 function clearStars(start, finish, arr) {
-  for (var i = start; i <= finish; i++) {  
+  for (var i = start; i <= finish; i++) {
     arr[i].classList.remove("star-filled");
-    arr[i].classList.add("star-empty");    
+    arr[i].classList.add("star-empty");
   }
 }

@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    margin: 0%;    
+    margin: 0px;    
     height:100vh; 
     font-size: 1.6rem;
     font-family: sans-serif;
@@ -40,9 +40,8 @@ body {
    Rating Stars - Orange - #ffab00    */
 
 
-body > header, body > footer {
-   /* width: 132rem;*/
-    width: 100%;
+body > header, body > footer {   
+    width: 100vw;
     height: 4.5rem; 
     display:flex;
     flex-flow: nowrap row;
@@ -51,14 +50,14 @@ body > header, body > footer {
 
 body > main {
     display: flex; 
-    height:100%;   
+    height:100%; 
+    width: 100%;  
 }
 
 /***********************  TOP HEADER  ***********************/
 
 body > header {    
     line-height: 4rem;    
-    border-radius: 1rem 1rem 0 0; 
     background-color: #2f364a;
 }
 
@@ -69,17 +68,14 @@ body > header a {
     text-decoration: none;    
 }
 
-header a:hover {
-    color:#ffffff;    
-}
+header a:hover {color:#ffffff;}
 
 #profile-container {
     display:flex;  
     width: 15.7rem;
     text-align: center;
     color:#ffffff;   
-    background-color: #15a4fa; 
-    border-radius: 0 1rem 0 0;  
+    background-color: #15a4fa;    
 }
 
 #profile-image {
@@ -126,9 +122,7 @@ main > nav {
 
 /******** Side bar first-block ***********/
 
-#first-block {
-    height: 12rem;   
-}
+#first-block {height: 12rem;}
 
 #first-block button {
     width: 16rem;
@@ -166,9 +160,7 @@ main > nav {
 }
 /******** Side bar third-block  ***********/
 
-#third-block {
-    height: 19rem;    
-}
+#third-block {height: 19rem;}
 
 #third-block ul {
     height: 15rem; 
@@ -236,16 +228,14 @@ li:nth-of-type(4) i {color:#7874cf;}
 
 /*******************  Main content   *******************/
 
-/*section {width: 100%;}*/
-
 section > header {
-    width: 100%;
+    width: calc(100vw - 20rem);
     height: 12rem; 
     background-color: #eef1f7;    
 }
 
 h1 {    
-    margin: 0%;  
+    margin: 0px;  
     padding: 0 2rem;  
     line-height: 7rem;
     font-size: 2.5rem; 
@@ -271,7 +261,7 @@ section header nav {
 }
 
 #filters div{    
-    padding: 0.7% 2.5%;
+    padding: 2.5px 9px;
     text-align: center;     
     border-radius: 2rem;    
     border: 1px solid transparent;    
@@ -295,7 +285,7 @@ section header nav {
     outline: none;
     border:none;
     width: 80%;
-    margin: 2% 5%;
+    margin: 8px 20px;
 }
 
 #books-container {    
@@ -362,22 +352,16 @@ section header nav {
 
 .mirror {
     transform: scaleX(-1);
+    margin-right: 5px;
 }
 
-.star-filled {
-    background-image: url(filled_star.png);   
-}
+.star-filled {background-image: url(filled_star.png);}
 
-.star-empty {
-    background-image: url(empty_star.png);   
-}
+.star-empty {background-image: url(empty_star.png);}
 
 /*******************  Footer   *******************/
 
-footer {
-    border-radius: 0 0 1rem 1rem;
-    background-color: #181e2c;
-}
+footer {background-color: #181e2c;}
 
 footer button{
     width: 5.5rem;
@@ -387,21 +371,10 @@ footer button{
     border: 1px solid transparent;      
 }
 
-#settings {
-    border-radius: 0 0 1rem 0;
-    background-color: #15a4fa;     
-}
+#settings {background-color: #15a4fa;}
 
-#settings:hover {
-    color: #046bac;
-}
+#settings:hover {color: #046bac;}
 
-#questions {    
-    background-color: #1f2637;     
-}
+#questions {background-color: #1f2637;}
 
-#questions:hover {    
-    background-color: #3c445a;     
-}
-
-
+#questions:hover {background-color: #3c445a;}
