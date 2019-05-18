@@ -3,6 +3,7 @@ function Calculator() {
 }
 
 Calculator.prototype = Object.create(Object.prototype);
+Calculator.prototype.constuctor = Calculator;
 
 Calculator.prototype.add = function(num) {
     if (Number.isFinite(num)) {

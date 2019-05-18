@@ -3,6 +3,16 @@ function FinancialCalculator() {
 }
 
 FinancialCalculator.prototype = Object.create(EngineerCalculator.prototype);
+FinancialCalculator.prototype.constructor = FinancialCalculator;
+
+function checkArgument(arguments) {
+    for (var i = 0; i < arguments.length; i++) {        
+       if(!Number.isFinite(arguments[i]) ) {           
+           return false;
+       }         
+    }    
+    return true;
+}
 
 FinancialCalculator.prototype.oppositeSign = function(num) {
     if (Number.isFinite(num)) {
@@ -20,15 +30,15 @@ FinancialCalculator.prototype.oppositeSign = function(num) {
 // результат - первоначальной суммы размещенных денежных средств, плюс начисленные проценты.
 
 FinancialCalculator.prototype.compoundInterest = function(p, i, k, t, n) {  
-    if (Number.isFinite(p && i && k && t && n)) {                              
-        this.result = p * Math.pow( 1 + (i * k /(t * 100) ), n);            
-    }                                                                          
+    if (checkArgument(arguments)) {                               
+        this.result = p * Math.pow( 1 + (i * k /(t * 100) ), n);           
+    }                                                                           
     return this;                                                            
-}                                                                              
+} 
 
 //сколько составляет определенный процент от переданного числа
 FinancialCalculator.prototype.perсentFromNum = function(perсent, num) {
-    if (Number.isFinite(perсent && num)) {                               
+    if (checkArgument(arguments)) {                               
         this.result = num * perсent /100;            
     }                                                                           
     return this;
@@ -36,7 +46,7 @@ FinancialCalculator.prototype.perсentFromNum = function(perсent, num) {
 
 //сколько процентов составляет первое число от второго 
 FinancialCalculator.prototype.compareNum1toNum2InPercent = function(num1, num2) {
-    if (Number.isFinite(num1 && num2)) {                               
+    if (checkArgument(arguments)) {                               
         this.result = num1 * 100 /num2;            
     }                                                                           
     return this;
@@ -44,7 +54,7 @@ FinancialCalculator.prototype.compareNum1toNum2InPercent = function(num1, num2) 
 
 //от какой величины число составляет определенный процент 
 FinancialCalculator.prototype.fromAmountNumIsEqualToPercent = function(num,perсent) {
-    if (Number.isFinite(num && perсent)) {                               
+    if (checkArgument(arguments)) {                               
         this.result = num / perсent * 100;            
     }                                                                           
     return this;
@@ -52,7 +62,7 @@ FinancialCalculator.prototype.fromAmountNumIsEqualToPercent = function(num,perс
 
 //на сколько процентов число первое число больше второго?
 FinancialCalculator.prototype.num1GreaterThanNum2InPercent = function(num1, num2) {
-    if (Number.isFinite(num1 && num2)) {                               
+    if (checkArgument(arguments)) {                               
         this.result = (num1 - num2)/num2 * 100;            
     }                                                                           
     return this;

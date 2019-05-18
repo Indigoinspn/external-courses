@@ -3,9 +3,10 @@ function EngineerCalculator() {
 }
 
 EngineerCalculator.prototype = Object.create(Calculator.prototype);
+EngineerCalculator.prototype.constuctor = EngineerCalculator;
 
 EngineerCalculator.prototype.pow = function(num, exponent) {
-    if (Number.isFinite(num)) {
+    if (checkArgument(arguments)) {
         this.result = Math.pow(num, exponent);
     }
     return this;
