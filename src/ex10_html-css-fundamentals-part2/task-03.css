@@ -2,8 +2,6 @@
 
 @import 'normalize.css'; /*By using this file you are essentially overwriting  the browsers default rules and making all browsers play by the same rules.*/
 
-
-
 html {
     box-sizing: border-box;   /* Change all elements to use border-box */
     font-size:0.625rem;      /* 10px*/
@@ -38,11 +36,9 @@ main {
     align-items: center;   
     padding-bottom: 3rem;       
 }
-
 /**********************  NAVIGATION BAR  ************************/
 
 /************ Gamburger and dropdown menu ***********/
-
 #gamburger {
     width: 6rem;       
     font-size: 6rem;    
@@ -81,25 +77,16 @@ main {
     color:#32a3fa;
     border-bottom: 1px solid #32a3fa; 
 }
-
 /************ Logo ***********/
-
 .logo {
-    width: 15rem; /*150px;*/    
+    width: 15rem;   
     background:url("logo.png") no-repeat center top; 
 }
-
 /************ Contacts ***********/
-
-.contacts {
-    display: none;
-}
+.contacts { display: none;}
 
 /************ Search field ***********/
-
-#search-container {
-    position: relative;          
-}
+#search-container {position: relative;}
 
 #search-icon {    
     font-size: 5rem; 
@@ -129,13 +116,9 @@ main {
     border: none;   
 }
 
-#search-field:focus {         
-    outline: none; 
-}
+#search-field:focus {outline: none;}
 
-#search-field::placeholder {
-    color:#6d6e71;
-}
+#search-field::placeholder {color:#6d6e71;}
 
 /**********************  CENTRAL PART  ************************/
 .central-part {   
@@ -180,9 +163,7 @@ main {
 
 /*********************** SLIDER ****************************************/
 
-.slider, .arrow-next {
-    display: none;    
-}
+.slider, .arrow-next {display: none;}
 
 /*********************** ARTICLES  ****************************************/
 .articles {
@@ -200,9 +181,7 @@ article {
     margin-bottom: 2rem;  
 }
 
-.icon {      
-    margin:auto;          
-}
+.icon {margin:auto;}
 
 .content {
     display: flex;
@@ -238,17 +217,14 @@ h2 {
         height: 6.3rem;                         
     }
     
-    #search-icon {
-        font-size: 2rem; 
-    } 
+    #search-icon {font-size: 2rem;} 
 
     #search-form { 
         display: inline;  
         position: static;
         padding: 0;      
         margin-left: 1.3rem;     
-    }   
-
+    } 
     /******** Central part *******/
 
     .heading {
@@ -261,11 +237,8 @@ h2 {
         margin-right: 24%;        
     }
 
-    .second-line {       
-        font-size: 4rem;        
-    } 
+    .second-line {font-size: 4rem;} 
 }
-
 /*************************   MEDIA QUERIES for tablet **************************/
 
 @media only screen and  (min-width: 1200px) and (max-width: 1345px) {    
@@ -278,20 +251,15 @@ h2 {
         align-items: center;       
     }
 
-    article {
-        margin-bottom: 4%;  
-    }
+    article {margin-bottom: 4%;}
 
     .content {   
         width: 86%;     
         justify-content: space-between;              
     } 
 
-    .icon {
-        padding: 0;       
-    }    
+    .icon {padding: 0;}    
 }
-
 /*************************  MEDIA QUERIES for desktop **************************/
 
 @media only screen and  (min-width: 1346px)  {
@@ -316,9 +284,7 @@ h2 {
         border-bottom: 1px solid transparent; 
     }
     
-    #gamburger i {
-        display:none;             
-    }
+    #gamburger i {display:none;}
 
     #dropdown-menu { 
         display: flex;        
@@ -415,9 +381,7 @@ h2 {
         border-width: 13px;       
     }
 
-    .icons {        
-        margin-top: 7rem;            
-    }
+    .icons {margin-top: 7rem;}
 
     .fa-phone, 
     .fa-map-marker-alt,
@@ -484,7 +448,7 @@ h2 {
 
     .icon {
         width: 23%;        
-        margin: 0%;        
+        margin: 0;        
     }
 
     .content {
@@ -499,7 +463,5 @@ h2 {
         line-height: 6rem;        
     }
 
-    .text {
-        height: 78%;
-    }  
+    .text {height: 78%;}  
 }

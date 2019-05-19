@@ -3,7 +3,6 @@
 var gamburger = document.getElementById("gamburger-icon");
 var dropdownMenu = document.getElementById("dropdown-menu");
 
-
 function showDropdownMenu(){
     dropdownMenu.style.display= "block"; 
 }
@@ -14,14 +13,12 @@ function hideDropdownMenu(){
         dropdownMenu.style.display= "none"; 
     }    
 }
-
 /**************** Search icon and search field ***********************/
 
 var searchContainer = document.getElementById("search-container");
 var searchForm = document.getElementById("search-form");
 var searchField = document.getElementById("search-field");
 var searchIcon = document.getElementById("search-icon");
-
 
 function showSearchForm(){
     searchForm.style.display= "block"; 
@@ -34,7 +31,6 @@ function searchIconChangeColor () {
 function searchIconChangeColorBack () {
     searchIcon.style.color="#969798";
 }
-
 /**************** Contact icons and geolocation ***********************/
 
 var geoIcon = document.getElementById("geo");
@@ -47,8 +43,6 @@ function showGeoLocation() {
 function hideGeoLocation() {
     popUp.style.display= "none";    
 }
-
-
 /************************ EVENT LISTENERS ****************************/
 
 searchContainer.addEventListener("click", showSearchForm);
