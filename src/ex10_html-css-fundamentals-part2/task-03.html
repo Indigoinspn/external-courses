@@ -11,8 +11,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
-    <link rel="stylesheet" href="task-03.css" type="text/css" media="screen">    
+    <link rel="stylesheet" href="task-03.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="media_queries.css" type="text/css" media="screen">
 </head>
+
 <body>
     <!--****************************** Header and Navigation ******************************-->
     <div class="container-header">
@@ -22,54 +24,54 @@
                 <i id="gamburger-icon" class="fas fa-bars"></i>
                 <nav id="dropdown-menu">
 
-                    <a href="#" target="_blank"> 
-                        HOME 
+                    <a href="#" target="_blank">
+                        HOME
                         <div class="arrow-up"></div>
                     </a>
 
-                    <a href="#" target="_blank"> 
-                        What about ISAMA 
+                    <a href="#" target="_blank">
+                        What about ISAMA
                         <div class="arrow-up"></div>
                     </a>
 
-                    <a href="#" target="_blank"> 
-                        What we do? 
+                    <a href="#" target="_blank">
+                        What we do?
                         <div class="arrow-up"></div>
                     </a>
 
-                    <a href="#" target="_blank"> 
-                        Our projects 
+                    <a href="#" target="_blank">
+                        Our projects
                         <div class="arrow-up"></div>
                     </a>
                     <a href="#" target="_blank">
-                         Excellent Team 
-                         <div class="arrow-up"></div>
-                        </a>
-                    <a href="#" target="_blank"> 
-                        Contact 
+                        Excellent Team
+                        <div class="arrow-up"></div>
+                    </a>
+                    <a href="#" target="_blank">
+                        Contact
                         <div class="arrow-up"></div>
                     </a>
                 </nav>
-            </div>            
+            </div>
             <!--****************** Logo ******************-->
             <div class="logo"></div>
             <!--****************** Contacts ******************-->
-            <div class="contacts">           
+            <div id="contacts">
                 <div class="icons">
                     <i class="fas fa-phone"></i>
-                    <i id="geo" class="fas fa-map-marker-alt"></i>                    
-                    <div id="tooltip">Saudi Arabia. Alreyadah</div>                 
+                    <i id="geo" class="fas fa-map-marker-alt"></i>
+                    <div id="tooltip">Saudi Arabia. Alreyadah</div>
                     <i class="far fa-envelope"></i>
                 </div>
-            </div>                       
-            <!--****************** Search field ******************-->  
-                <div id="search-container">
-                    <i id="search-icon" class="fas fa-search"></i>
+            </div>
+            <!--****************** Search field ******************-->
+            <div id="search-container">
+                <i id="search-icon" class="fas fa-search"></i>
 
-                    <form id="search-form">
-                        <input id="search-field" type="text" name="search" placeholder="Type your search words">
-                    </form>
-                </div>            
+                <form id="search-form">
+                    <input id="search-field" type="text" name="search" placeholder="Type your search words" autocomplete="off">
+                </form>
+            </div>
         </header>
     </div>
     <!--********************************** Central part ****************************-->
@@ -86,9 +88,17 @@
                     <img src="sign.png" alt="'and' sign">
                 </div>
                 <!--****************** Slider ******************-->
-                <div class="slider">
-                    <img src="slider1.jpg" alt="Slide 1">
-                    <img src="slider2.jpg" alt="Slide 2">
+                <div id="slider-container">
+                    <div>
+                        <img src="slider1.jpg" alt="Slide 1">
+                        <span class="slide1-text"><i class="far fa-heart"></i> Like</span>
+                    </div>
+
+                    <div>
+                        <img src="slider2.jpg" alt="Slide 2">
+                        <span class="slide2-text"><i class="far fa-heart"></i> Like</span>
+                    </div>
+
                     <div class="arrow-next"> &rsaquo;</div>
                 </div>
             </div>
@@ -136,4 +146,5 @@
     </div>
     <script src="task-03.js" defer></script>
 </body>
+
 </html>

@@ -83,7 +83,7 @@ main {
     background:url("logo.png") no-repeat center top; 
 }
 /************ Contacts ***********/
-.contacts { display: none;}
+#contacts { display: none;}
 
 /************ Search field ***********/
 #search-container {position: relative;}
@@ -91,12 +91,8 @@ main {
 #search-icon {    
     font-size: 5rem; 
     color:#969798;
-} 
-
-#search-icon:hover {
-    color:#3687c4;
     cursor: pointer;
-}
+} 
 
 #search-form { 
     display: none;     
@@ -112,11 +108,14 @@ main {
 
 #search-field {
     width: 100%;    
-    color:#3687c4;    
-    border: none;   
+    color:#3687c4;     
+    border: 1px solid transparent;   
 }
 
-#search-field:focus {outline: none;}
+#search-field:focus {
+    outline: none;
+    border-bottom: 1px solid #3687c4;  
+}
 
 #search-field::placeholder {color:#6d6e71;}
 
@@ -132,9 +131,8 @@ main {
 .heading{      
     width: 73%;
     height: 10.7rem;    
-    margin:20% 60% 30%;    
+    margin:20% 60% 45rem;    
     color:#ffffff;    
-    border: 1px solid #bfc5c9;     
 }
 
 .first-line  {        
@@ -160,10 +158,9 @@ main {
     bottom:11rem;   
     left:1rem;     
 }
-
 /*********************** SLIDER ****************************************/
 
-.slider, .arrow-next {display: none;}
+#slider-container, .arrow-next {display: none;}
 
 /*********************** ARTICLES  ****************************************/
 .articles {
@@ -203,265 +200,4 @@ h2 {
     text-align: justify; 
     overflow: hidden;      
     color: #6d6e71;    
-}
-
-/*************** MEDIA QUERIES common rules for large devices ****************/
-
-@media only screen and  (min-width: 1200px) {
-
-    /************ Nav bar ***********/
-
-    #search-container {
-        display: flex;  
-        width: 20rem; 
-        height: 6.3rem;                         
-    }
-    
-    #search-icon {font-size: 2rem;} 
-
-    #search-form { 
-        display: inline;  
-        position: static;
-        padding: 0;      
-        margin-left: 1.3rem;     
-    } 
-    /******** Central part *******/
-
-    .heading {
-        padding-left: 7.5%;         
-        margin-bottom: 30%; 
-    }
-
-    .first-line {                 
-        font-size: 5.5rem; 
-        margin-right: 24%;        
-    }
-
-    .second-line {font-size: 4rem;} 
-}
-/*************************   MEDIA QUERIES for tablet **************************/
-
-@media only screen and  (min-width: 1200px) and (max-width: 1345px) {    
-
-    /*********** Articles **********/
-
-    .articles {        
-        display: flex;        
-        flex-direction: column;     
-        align-items: center;       
-    }
-
-    article {margin-bottom: 4%;}
-
-    .content {   
-        width: 86%;     
-        justify-content: space-between;              
-    } 
-
-    .icon {padding: 0;}    
-}
-/*************************  MEDIA QUERIES for desktop **************************/
-
-@media only screen and  (min-width: 1346px)  {
-
-    .container-main {
-        background: #ffffff url("desktop_bg_img.jpg") no-repeat center top;
-    }
-
-    header, main {
-        margin: auto;  
-        padding-left: 9rem;  
-        padding-right: 9rem;      
-        max-width: 134.5rem;                     
-    }
-
-    /************ Nav bar ***********/
-    #gamburger {
-        order: 3;
-        position: static;
-        width: 82.5%; 
-        border-top: 1px solid #dcdcdd;  
-        border-bottom: 1px solid transparent; 
-    }
-    
-    #gamburger i {display:none;}
-
-    #dropdown-menu { 
-        display: flex;        
-        box-shadow: none;        
-        font-weight: bold;                     
-    }
-
-    #dropdown-menu a {
-        font-size: 1.4rem; 
-        line-height: 4.5rem;  
-        padding: 2.1rem 2.1rem 0 2.1rem;             
-    }  
-
-    #dropdown-menu a:hover {
-        cursor: pointer;    
-        color:#32a3fa;
-        border-bottom: none; 
-    }   
-    
-    #dropdown-menu a:hover .arrow-up {
-        width: 0; 
-        height: 0; 
-        position: relative;
-        top: 1rem;
-        margin: auto;
-        border-left: 2rem solid transparent;
-        border-right: 2rem solid transparent;        
-        border-bottom: 1rem solid #32a3fa;
-    }    
-        
-    #dropdown-menu a:not(:last-of-type)  {
-        border-right: 1px solid #dcdcdd; 
-    } 
-
-    /************ Logo, contacts, search field  ***********/
-
-    #search-container {      
-        order: 4;
-        width: 17.5%;
-        height: 9rem; 
-        align-items: center;
-        border-top: 1px solid #dcdcdd;   
-    }
-  
-    .logo {
-        width:38.6rem;    
-        margin-bottom: 5.5rem ; 
-        background:url("logo_desktop.png") no-repeat center top; 
-    }
-
-    .contacts {
-        display: block;
-        position: relative;
-        width: 17.5%;        
-        margin-bottom: 5.5rem;    
-    }
-
-
-    #tooltip {         
-        display: none;
-        font-family: Arial;
-        font-weight: 100;
-        font-size: 1.5rem;         
-        text-align: center; 
-        width: 20.1rem;
-        height: 5rem;
-        padding: 15px 0;
-        position: absolute;        
-        top: 0%;
-        left: 0%;
-        border: 1px solid #d4d4d5;
-        border-radius: 10px;  
-        color: #858688;             
-    }
-
-    #tooltip::before,
-    #tooltip::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        border: solid transparent;
-
-    }
-
-    #tooltip::before {     
-        border-top-color: #d4d4d5; 
-        border-width: 14px;     
-        left: 8.5rem;             
-    }
-
-    #tooltip::after {   
-        left: 8.6rem;       
-        border-top-color: #ffffff;  
-        border-width: 13px;       
-    }
-
-    .icons {margin-top: 7rem;}
-
-    .fa-phone, 
-    .fa-map-marker-alt,
-    .fa-envelope {
-        font-size: 2.84rem;
-        padding: 0 9.6%;        
-    }
-
-    .icons i:hover  {
-        color:#3687c4;
-        cursor: pointer; 
-    }
-
-    #geo {
-        border-left:1px solid #dcdcdd;
-        border-right:1px solid #dcdcdd;      
-    }
-
-   /********* Central part *******/
-
-    .heading {
-        width: 85%;
-        margin-top: 22%;
-        margin-bottom: 13.5%;
-    }
-
-    /*********** Slider **********/
-
-    .slider {
-        display: flex; 
-        justify-content: flex-end;
-        width: 76rem; 
-        margin-left: 34.5%;         
-    }
-
-    .arrow-next {
-        display: block; 
-        width: 10rem;
-        font-size: 15rem;
-        text-align: center;
-        color:#d4d4d4;
-        background-color: #f4f4f4;  
-    }
-
-    .arrow-next:hover {
-        color:#fffefe;
-        background-color: #c4c3c3;  
-        cursor: pointer;
-    }
-
-    /*********** Articles **********/
-
-    .articles {
-        width: 100%;              
-        flex-direction: row;  
-        justify-content: space-between;        
-        margin: 10rem auto ; 
-    }
-
-    article {
-        width: 45%;        
-        align-items: flex-start;            
-    }   
-
-    .icon {
-        width: 23%;        
-        margin: 0;        
-    }
-
-    .content {
-        width: 77%;
-        height: 30rem;        
-    }
-
-    h2 {  
-        height: 20%;
-        margin: 0;  
-        font-size: 2.7rem;         
-        line-height: 6rem;        
-    }
-
-    .text {height: 78%;}  
 }
