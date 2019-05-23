@@ -1,5 +1,5 @@
 body{    
-    margin: 2%  auto;
+    margin: 50px  auto;
     text-align: center; 
 }
 
@@ -48,7 +48,6 @@ body{
 }
 
 /*************  Loader Animation code ********************/
-
 .level {
     animation-name: level;
     animation-duration: 40s; 
@@ -57,9 +56,9 @@ body{
     animation-iteration-count: infinite;      
 }
 
-#candy, #candy-2, #cake,
-#ice, #ice-2, #lolipop, 
-#dough, #dough-1 {
+.candy-green, .candy-pink, .cake,
+.icecream-mint, .icecream-pink, .lolipop, 
+.dough, .dough-1 {
     background-size: contain;
     background-repeat: no-repeat;    
     background-position: center center;
@@ -68,7 +67,7 @@ body{
     animation-iteration-count: infinite;    
 } 
 
-#candy {
+.candy-green {
     height: 50px; 
     width: 50px;
     background-image: url(candy.png);
@@ -76,7 +75,7 @@ body{
     animation-delay: 5s; 
 }
 
-#candy-2 {
+.candy-pink {
     height: 50px; 
     width: 50px;
     background-image: url(candy2.png);
@@ -84,7 +83,7 @@ body{
     animation-delay:4s;     
 }
 
-#cake  {
+.cake  {
     background-image: url(cakepart.png);  
     width: 71px;
     height: 96px;       
@@ -92,7 +91,7 @@ body{
     animation-delay: 7s;      
 }
 
-#ice {
+.icecream-mint {
     background-image: url(ice.png);
     width: 40px;
     height: 100px;    
@@ -100,14 +99,14 @@ body{
     animation-delay: 3s;   
 }
 
-#ice-2 {
+.icecream-pink {
     background-image: url(ice2.png);
     width: 40px;
     height: 100px;
     animation-name: ice;     
 } 
 
-#lolipop {
+.lolipop {
     background-image: url(lol.png);
     width: 40px;
     height: 80px;         
@@ -115,7 +114,7 @@ body{
     animation-delay: 4s;  
 }
 
-#dough {
+.dough {
     background-image: url(dough.png);
     width: 80px;
     height: 80px;    
@@ -151,8 +150,7 @@ body{
     20% {  
         transform:rotate(-90deg);          
         left: 30px;         
-    }     
-    
+    }    
     60% {transform:rotate(90deg);} 
 
     100% {
@@ -174,7 +172,6 @@ body{
 }
 
 /***********    Jumping ball    ***************/
-
 .wall {
     margin: 20px auto;
     width: 500px;
@@ -198,9 +195,7 @@ body{
     margin:25px 0;
     background-color: rgb(28, 139, 241);    
 }
-
-/*************  Jumping ball  Animation code  ********************/
-
+/*************  Jumping ball &  Animation code  ********************/
 .ball {    
     animation-name: ball;    
     animation-duration: 6s; 
@@ -209,23 +204,20 @@ body{
     animation-iteration-count: infinite;
 }
 
-@keyframes ball {    
-
+@keyframes ball {
     22% {transform: scale(1,1) rotate( 316.8deg);}
 
     25% {
         margin-top: 250px;
         margin-left: 110px;
         transform: scale(1.2,0.6) rotate(360deg); 
-    } 
-
+    }
     28% {transform: scale(1,1) rotate(403.2deg);}   
 
     50% {
         margin-top: 100px;
         margin-left: 220px;            
     }
-
     72% {transform: scale(1,1) rotate(1036.8deg);}
 
     75% {
@@ -233,7 +225,6 @@ body{
         margin-left: 330px;
         transform: scale(1.2,0.6) rotate(1080deg); 
     }
-
     78% {transform: scale(1,1) rotate(1123.2deg);}
    
     100% {         
@@ -242,9 +233,7 @@ body{
         transform: scale(1,1) rotateZ(1440deg); 
     }
 }
-
 /************* #3 Endless animation ********************/
-
 .container {
     margin: 2% auto;
     width: 800px;
@@ -268,15 +257,13 @@ body{
     animation-timing-function: linear; 
     animation-iteration-count: infinite;
 }
-
-@keyframes object {    
-
+/******************* Animation code  ********************/
+@keyframes object { 
     0%, 100% {
         top:0px;
         left:360px;   
         transform: scale(0.5,0.5);
     }
-
     16.5% {        
         top:250px;
         left:720px;
@@ -284,16 +271,14 @@ body{
         transform: scale(1,1) rotate( 0deg); 
         background-image: linear-gradient(#ec8ff5, #8967c7, #1e0749);                                       
         box-shadow: 20px 20px 5px 10px #c8becf;  
-    }    
-
+    }
     33% {
         top:500px;
         left:720px; 
         border-radius: 50%; 
         transform: scale(1.5,2) rotate( 720deg) skewY(20deg);  
         box-shadow: 20px 20px 5px 10px #c8becf;                     
-    }  
-
+    } 
     49.5% {
         top:670px;
         left:360px; 
@@ -302,15 +287,13 @@ body{
         box-shadow: 0px 0px 0px 0px #c8becf;            
         transform: scale(0.5,0.5)rotate( 0deg);         
     }
-
     66% {
         top:500px;
         left:0px; 
         border-radius: 50%;          
         transform: scale(2,1.5) rotate( 720deg) skewX(20deg); 
         box-shadow: 20px 20px 5px 10px #c8becf;                   
-    }   
-   
+    }     
     82.5% { 
         top:250px;
         left:0px; 
@@ -319,5 +302,4 @@ body{
         box-shadow: 20px 20px 5px 10px #c8becf; 
         transform: scale(1,1) rotate(0deg);            
     }
-}   
-
+}
