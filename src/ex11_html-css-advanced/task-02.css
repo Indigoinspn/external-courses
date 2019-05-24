@@ -1,0 +1,305 @@
+body{    
+    margin: 50px  auto;
+    text-align: center; 
+}
+
+/***********    loader    ***************/
+.cloud {
+    background-image: url(Cl.png);
+    background-size: 380px 130px;
+    z-index: 4;
+    position: relative;
+    margin: auto;    
+    width: 380px;
+    height: 130px;
+}
+
+.container-small{    
+    display: flex; 
+    justify-content: center;
+    flex-flow: row;    
+    height: 600px;
+}
+
+.item-2, .item {
+    z-index: 1;               
+    position: relative;
+    top: -100px;    
+}
+
+.item { left: 50px;}     
+
+.item-2 { left: -50px;}
+
+.pile, .level {
+    width: 300px;
+    height: 190px; 
+    background-size: 300px 190px;    
+}
+
+.level {
+    background-image: url(hill_contour.png);   
+    background-color:  #ffffff;     
+}
+
+.pile  {    
+    background-image: url(hill_c.png);         
+    margin:  0 auto;       
+}
+
+/*************  Loader Animation code ********************/
+.level {
+    animation-name: level;
+    animation-duration: 40s; 
+    animation-delay: 6s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;      
+}
+
+.candy-green, .candy-pink, .cake,
+.icecream-mint, .icecream-pink, .lolipop, 
+.dough, .dough-1 {
+    background-size: contain;
+    background-repeat: no-repeat;    
+    background-position: center center;
+    animation-duration: 6s; 
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite;    
+} 
+
+.candy-green {
+    height: 50px; 
+    width: 50px;
+    background-image: url(candy.png);
+    animation-name: candy;
+    animation-delay: 5s; 
+}
+
+.candy-pink {
+    height: 50px; 
+    width: 50px;
+    background-image: url(candy2.png);
+    animation-name: candy;
+    animation-delay:4s;     
+}
+
+.cake  {
+    background-image: url(cakepart.png);  
+    width: 71px;
+    height: 96px;       
+    animation-name: cake;
+    animation-delay: 7s;      
+}
+
+.icecream-mint {
+    background-image: url(ice.png);
+    width: 40px;
+    height: 100px;    
+    animation-name: ice;
+    animation-delay: 3s;   
+}
+
+.icecream-pink {
+    background-image: url(ice2.png);
+    width: 40px;
+    height: 100px;
+    animation-name: ice;     
+} 
+
+.lolipop {
+    background-image: url(lol.png);
+    width: 40px;
+    height: 80px;         
+    animation-name: lolipop;    
+    animation-delay: 4s;  
+}
+
+.dough {
+    background-image: url(dough.png);
+    width: 80px;
+    height: 80px;    
+    animation-name: dough;    
+    animation-delay: 2s; 
+    animation-duration: 7s;   
+}
+
+/*************  Animation code  ********************/
+
+@keyframes candy {
+    100% {   
+        transform: rotateZ(1440deg); 
+        margin-top: 700px;    
+    }
+}
+
+@keyframes cake {
+    100% {
+        transform: rotate(180deg);    
+        margin-top: 700px;              
+    }    
+}
+
+@keyframes ice {
+    100% {
+        transform:rotate(180deg); 
+        margin-top: 700px;                 
+    }    
+}
+
+@keyframes lolipop { 
+    20% {  
+        transform:rotate(-90deg);          
+        left: 30px;         
+    }    
+    60% {transform:rotate(90deg);} 
+
+    100% {
+        transform:rotate(-180deg);  
+        left: -20px;   
+        margin-top: 700px;               
+    }    
+}
+
+@keyframes dough {   
+    100% {      
+        margin-top: 700px;        
+        transform:rotate(-360deg);       
+    }    
+}
+
+@keyframes level {          
+    100% {height: 0px;}     
+}
+
+/***********    Jumping ball    ***************/
+.wall {
+    margin: 20px auto;
+    width: 500px;
+    height: 300px;
+    border-right: 4px solid rgb(43, 30, 30);
+    border-left: 4px solid rgb(43, 30, 30);
+    border-bottom: 4px solid rgb(43, 30, 30);
+    border-top: 4px solid transparent;
+}
+
+.ball {
+    width:  60px;
+    height: 60px;    
+    border-radius: 50%;
+    border: 2px solid rgb(250, 132, 21);    
+    background-color: rgb(247, 160, 29);
+}
+
+.line {    
+    height: 7px;
+    margin:25px 0;
+    background-color: rgb(28, 139, 241);    
+}
+/*************  Jumping ball &  Animation code  ********************/
+.ball {    
+    animation-name: ball;    
+    animation-duration: 6s; 
+    animation-direction: alternate;
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite;
+}
+
+@keyframes ball {
+    22% {transform: scale(1,1) rotate( 316.8deg);}
+
+    25% {
+        margin-top: 250px;
+        margin-left: 110px;
+        transform: scale(1.2,0.6) rotate(360deg); 
+    }
+    28% {transform: scale(1,1) rotate(403.2deg);}   
+
+    50% {
+        margin-top: 100px;
+        margin-left: 220px;            
+    }
+    72% {transform: scale(1,1) rotate(1036.8deg);}
+
+    75% {
+        margin-top: 250px;
+        margin-left: 330px;
+        transform: scale(1.2,0.6) rotate(1080deg); 
+    }
+    78% {transform: scale(1,1) rotate(1123.2deg);}
+   
+    100% {         
+        margin-top: 100px; 
+        margin-left: 440px; 
+        transform: scale(1,1) rotateZ(1440deg); 
+    }
+}
+/************* #3 Endless animation ********************/
+.container {
+    margin: 2% auto;
+    width: 800px;
+    height: 750px;    
+}
+
+.object{
+    position: relative;;
+    top:0px;
+    left:360px;
+    width:80px;
+    height: 80px;
+    background-image: radial-gradient(circle, #ec8ff5, #8967c7, #1e0749);        
+    border-radius: 50%;
+}
+
+.object{    
+    animation-name: object;    
+    animation-duration: 15s; 
+    animation-direction: alternate;
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite;
+}
+/******************* Animation code  ********************/
+@keyframes object { 
+    0%, 100% {
+        top:0px;
+        left:360px;   
+        transform: scale(0.5,0.5);
+    }
+    16.5% {        
+        top:250px;
+        left:720px;
+        border-radius: 5%;
+        transform: scale(1,1) rotate( 0deg); 
+        background-image: linear-gradient(#ec8ff5, #8967c7, #1e0749);                                       
+        box-shadow: 20px 20px 5px 10px #c8becf;  
+    }
+    33% {
+        top:500px;
+        left:720px; 
+        border-radius: 50%; 
+        transform: scale(1.5,2) rotate( 720deg) skewY(20deg);  
+        box-shadow: 20px 20px 5px 10px #c8becf;                     
+    } 
+    49.5% {
+        top:670px;
+        left:360px; 
+        border-radius: 50%;
+        background-image: radial-gradient(circle, #ec8ff5, #8967c7, #1e0749);          
+        box-shadow: 0px 0px 0px 0px #c8becf;            
+        transform: scale(0.5,0.5)rotate( 0deg);         
+    }
+    66% {
+        top:500px;
+        left:0px; 
+        border-radius: 50%;          
+        transform: scale(2,1.5) rotate( 720deg) skewX(20deg); 
+        box-shadow: 20px 20px 5px 10px #c8becf;                   
+    }     
+    82.5% { 
+        top:250px;
+        left:0px; 
+        border-radius: 5%;                
+        background-image: linear-gradient(#ec8ff5, #8967c7, #1e0749);    
+        box-shadow: 20px 20px 5px 10px #c8becf; 
+        transform: scale(1,1) rotate(0deg);            
+    }
+}

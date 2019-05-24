@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="task-04.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>task-04.html - Side Bar</title>
+</head>
+
+<body>
+    <!-- *********************  TOP HEADER  ******************** --> 
+    <header class="main-header">
+        <a class="help-support" href="#" target="_blank"> Help Center </a>
+        <a class="help-support" href="#" target="_blank"> Our Support </a>
+        <div class="profile-container">
+            <div class="profile-image"></div>
+            <div class="user-name">John Doe </div>
+            <button class="profile-arrowdown"><i class="fas fa-chevron-circle-down"></i></button>
+        </div>
+    </header>
+    <!-- *********************  SIDE BAR  ******************** -->
+    <main>
+        <nav class="sidebar-navigation">
+            <!--  ******** Side bar FIRST BLOCK *********** -->
+            <div class="first-block">
+                <button class="add-button"> &plus; ADD BOOK</button>
+            </div>
+            <!--  ******** Side bar SECOND BLOCK *********** -->
+            <div class="second-block">
+                <a class="sidebar-links"> <i class="sidebar-link-icon fas fa-book"></i> Now Reading </a>
+                <a class="sidebar-links"> <i class="sidebar-link-icon fas fa-globe-americas"></i> Browse </a>
+                <a class="sidebar-links"> <i class="sidebar-link-icon fas fa-shopping-cart"></i> Buy Books </a>
+                <a class="sidebar-links"> <i class="sidebar-link-icon fas fa-star"></i> Favourite Books</a>
+                <a class="sidebar-links"> <i class="sidebar-link-icon fas fa-list"></i> Wishlist </a>
+                <a class="sidebar-links"> <i class="sidebar-link-icon far fa-clock"></i> History </a>
+            </div>
+            <!--  ******** Side bar THIRD BLOCK *********** -->
+            <div class="third-block">
+                <ul class="sidebar-filters">
+                    <li class="sidebar-filter-item">
+                        <i class="sidebar-filter-i fas fa-circle"></i>
+                        <div class="sidebar-filter-text"> Must Read Titles </div>
+                    </li>
+                    <li class="sidebar-filter-item">
+                        <i class="sidebar-filter-i fas fa-circle"></i>
+                        <div class="sidebar-filter-text"> Best of List </div>
+                    </li>
+                    <li class="sidebar-filter-item">
+                        <i class="sidebar-filter-i fas fa-circle"></i>
+                        <div class="sidebar-filter-text"> Classic Novels </div>
+                    </li>
+                    <li class="sidebar-filter-item">
+                        <i class="sidebar-filter-i fas fa-circle"></i>
+                        <div class="sidebar-filter-text"> Non Fiction </div>
+                    </li>
+                </ul>
+            </div>
+            <!--  ******** Side bar FOURTH BLOCK *********** -->
+            <div class="fourth-block">
+
+                <div class="history-event">
+                    <i class="history-event-i far fa-clock"></i>
+                    <div class="history-container">
+
+                        <div class="event-info"> You added <span class="book-title"> Fight Club </span>
+                            by <span class="book-author"> Chuck Palahniuk </span>
+                            to your <span class="book-group">Must Read Titles</span>
+                        </div>
+                        <div class="time-ago"> 24 minutes ago</div>
+                    </div>
+                </div>
+
+                <div class="history-event">
+                    <i class="history-event-i far fa-clock"></i>
+                    <div class="history-container">
+
+                        <div class="event-info"> You added <span class="book-title"> The Trial </span>
+                            by <span class="book-author"> Franz Kafka </span>
+                            to your <span class="book-group">Must Read Titles</span>
+                        </div>
+                        <div class="time-ago"> 48 minutes ago</div>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- *******************  MAIN CONTENT with book images ***************** -->
+        <section class="main-section">
+            <header class="main-section-header">
+                <h1>Brows Available Books</h1>
+                <nav class="main-section-nav">
+                    <div class="filters">
+                        <div class="filter-item">All books</div>
+                        <div class="filter-item">Most recent</div>
+                        <div class="filter-item">Most popular</div>
+                        <div class="filter-item">Free books</div>
+                    </div>
+                    <form class="search-field" action="#">
+                        <input class="search-field-input" type="text" placeholder="Enter Keywords" name="search">
+                        <i class="fas fa-search"></i>
+                    </form>
+                </nav>
+            </header>
+            <!-- *************** IMAGES  ************ -->
+            <div class="books-container">
+                <div class="row">
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                </div>
+                <div class="row">
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                </div>
+                <div class="row">
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                    <div class="books"> BOOK </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- *****************************  FOOTER *********************** --> 
+    <footer class="main-footer">
+            <button class="questions"> <i class="fas fa-question-circle"></i> </button>
+            <button class="settings" > <i class="fas fa-cog"></i> </button>
+    </footer>
+</body>
+</html>
