@@ -1,0 +1,203 @@
+/*************************** Base Styles ***************************/
+
+@import 'normalize.css'; /*By using this file you are essentially overwriting  the browsers default rules and making all browsers play by the same rules.*/
+
+html {
+    box-sizing: border-box;   /* Change all elements to use border-box */
+    font-size:0.625rem;      /* 10px*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {    
+    color:#6d6e71;    
+    background: #ffffff;   
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.container-main{
+    background-size: 100%;  
+    background:url("tablet_bg_img.jpg") no-repeat center top;      
+}
+
+header { 
+    display: flex;
+    flex-direction: row;  
+    flex-flow: wrap; 
+    justify-content: space-between;
+    padding: 3rem 4rem 0;          
+}
+
+main {    
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    padding-bottom: 3rem;       
+}
+/**********************  NAVIGATION BAR  ************************/
+
+/************ Gamburger and dropdown menu ***********/
+#gamburger {
+    width: 6rem;       
+    font-size: 6rem;    
+    line-height: 2.5rem; 
+    color:#3687c4;  
+    text-align: center;
+    position: relative;    
+}
+
+#dropdown-menu {
+    display: none;
+    z-index: 4;
+    position: absolute;
+    min-width: 25rem;
+    text-align: left;
+    background-color: #ffffff;    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);    
+}
+
+#dropdown-menu a {
+    display: block;
+    font-size: 2rem;
+    padding: 1.5rem;
+    color: #6d6e71; 
+    text-decoration: none;
+    border-bottom: 1px solid transparent;    
+}
+
+#gamburger:hover  {
+    cursor: pointer; 
+    color:#32a3fa;    
+}
+
+#dropdown-menu a:hover {
+    cursor: pointer;    
+    color:#32a3fa;
+    border-bottom: 1px solid #32a3fa; 
+}
+/************ Logo ***********/
+.logo {
+    width: 15rem;   
+    background:url("logo.png") no-repeat center top; 
+}
+/************ Contacts ***********/
+#contacts { display: none;}
+
+/************ Search field ***********/
+#search-container {position: relative;}
+
+#search-icon {    
+    font-size: 5rem; 
+    color:#969798;
+    cursor: pointer;
+} 
+
+#search-form { 
+    display: none;     
+    z-index: 4;
+    position: absolute;             
+    width: 20rem; 
+    bottom: -5rem;
+    right: 1rem;
+    padding: 0.5rem; 
+    font-size: 1.4rem;     
+    background-color: #ffffff;     
+}
+
+#search-field {
+    width: 100%;    
+    color:#3687c4;     
+    border: 1px solid transparent;   
+}
+
+#search-field:focus {
+    outline: none;
+    border-bottom: 1px solid #3687c4;  
+}
+
+#search-field::placeholder {color:#6d6e71;}
+
+/**********************  CENTRAL PART  ************************/
+.central-part {   
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width:100%;
+    min-height: 45rem;     
+}
+
+.heading{      
+    width: 73%;
+    height: 10.7rem;    
+    margin:20% 60% 45rem;    
+    color:#ffffff;    
+}
+
+.first-line  {        
+    z-index: 1; 
+    position: relative;
+    text-align: center;   
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 6rem;  
+    letter-spacing: 0.2rem;            
+}
+
+.second-line {
+    z-index: 2; 
+    position: relative;    
+    text-align: center;     
+    font-size: 3.5rem; 
+    font-family: 'Montserrat', sans-serif;          
+}  
+
+.heading img {    
+    position: relative;
+    bottom:11rem;   
+    left:1rem;     
+}
+/*********************** SLIDER ****************************************/
+
+#slider-container, .arrow-next {display: none;}
+
+/*********************** ARTICLES  ****************************************/
+.articles {
+    width: 73%; 
+    display: flex;        
+    flex-direction: column;     
+    align-items: center;       
+    margin-bottom: 10rem;
+}  
+    
+article {     
+    display: flex;
+    flex-wrap: wrap;       
+    align-items: center; 
+    margin-bottom: 2rem;  
+}
+
+.icon {margin:auto;}
+
+.content {
+    display: flex;
+    flex-direction: column;      
+    width: 100%; 
+    text-decoration: none; 
+}
+
+h2 {    
+    height:47%;
+    font-size: 2rem;  
+    font-weight: bold; 
+    color: #6d6e71;     
+}
+
+.text {
+    height: 6.5rem;
+    font-size: 1.6rem; 
+    text-align: justify; 
+    overflow: hidden;      
+    color: #6d6e71;    
+}
