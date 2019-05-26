@@ -165,14 +165,19 @@ main > nav {
 #third-block ul {
     height: 15rem; 
     list-style: none;
-    padding-left: 2rem;       
+    padding-left: 0;       
 }
 
 #third-block li {
     display: flex;
     flex-direction: row;
     height: 3.75rem; 
-    
+    padding-left: 2rem;     
+}
+
+#third-block li:hover i, 
+#third-block li:hover {
+    color:#ffffff;
 }
 
 #third-block li div {line-height: 3.3rem;}
@@ -191,7 +196,7 @@ li:nth-of-type(2) i {color:#ffab00;}
 
 li:nth-of-type(3) i {color:#00bfdd;}
 
-li:nth-of-type(4) i {color:#7874cf;}    
+li:nth-of-type(4) i {color:#7874cf;}      
 
 /******** Side bar fourth-block ***********/
 
