@@ -1,0 +1,49 @@
+.main-header {    
+    line-height: 4rem;    
+    background-color: #2f364a;
+}
+
+.help-support {
+    padding: 0 1.7rem;
+    color:#69738c;
+    font-size: 1.5rem;
+    text-decoration: none;    
+}
+
+.help-support:hover {color:#ffffff;}
+
+.profile-container {
+    display: flex;  
+    width: 15.7rem;
+    text-align: center;
+    color:#ffffff;   
+    background-color: #15a4fa;    
+}
+
+.profile-image {
+    width: 4rem ;
+    height: 2.8rem;
+    margin: 0.9rem 0.7rem;
+    border-radius: 50%;   
+    background-color: #8dbef5;  
+    border: 1px solid #ffffff;   
+}
+
+.user-name {    
+    width:6.7rem; 
+    font-size: 1.3rem; 
+    line-height: 4.5rem;  
+}
+
+.profile-arrowdown {
+    height: 4.5rem;
+    padding: 1rem 1.5rem;
+    color: #ffffff;  
+    border:none;
+    outline: none;  
+    background-color: transparent;        
+}
+
+.profile-arrowdown:hover {
+    color: #046bac;
+}

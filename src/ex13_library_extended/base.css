@@ -1,0 +1,33 @@
+html {
+    box-sizing: border-box;   
+    font-size: 0.625rem;      /* 10px*/   
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0px;    
+    height: 100vh; 
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    flex-flow: nowrap column;
+    background-color: #ffffff;
+}
+
+body > header, footer {   
+    width: 100vw;
+    height: 4.5rem; 
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: flex-end;     
+}
+
+main {
+    display: flex; 
+    height: 100%; 
+    width: 100%;  
+}

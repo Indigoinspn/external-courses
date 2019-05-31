@@ -1,0 +1,140 @@
+section > header {
+    width: calc(100vw - 20rem);
+    height: 12rem; 
+    background-color: #eef1f7;    
+}
+
+h1 {    
+    margin: 0px;  
+    padding: 0 2rem;  
+    line-height: 7rem;
+    font-size: 2.5rem; 
+    font-weight: lighter;      
+}
+
+section header nav {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 0 2rem;
+    color: #8c97b2;    
+    border-top: 1px solid #dadfea;  
+    border-bottom: 1px solid #dadfea;  
+}
+
+#filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    font-size: 1.2rem;
+    width: 35rem; 
+    margin: 0;
+    padding: 0;
+    list-style-type: none;      
+}
+
+#filters li{    
+    padding: 2.5px 9px;
+    text-align: center;     
+    border-radius: 2rem;    
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+}
+
+#filters li:hover {
+    cursor: pointer;
+    color: #ffffff;    
+    background-color: #97b3ce;         
+}
+
+#filters li:active {
+    cursor: pointer;
+    color: #ffffff;    
+    background-color: #6f9ec9;          
+}
+
+#search-field {
+    width: 40rem;    
+    margin: 0.7rem 0;     
+    font-size: 1.5rem;    
+    border-radius: 3rem;
+    background-color: #ffffff;
+    border: 1px solid #c7cddb;
+}
+
+#search-field input {
+    outline: none;
+    border: none;
+    width: 80%;
+    margin: 8px 20px;
+}
+
+#books-container {    
+    height: calc(100% - 12rem);   
+    overflow-y: scroll;  
+    overflow-x: hidden;   
+    padding: 3rem 2rem;
+    display: flex;
+    flex-flow: wrap row;    
+    align-content: flex-start;
+    justify-content: space-evenly;    
+}
+
+.book  {
+    width: 20rem;
+    height: 35rem;
+    margin:0 1rem 3rem;
+    background-color: #f9fafd;
+}
+
+.book img {
+    width: 20rem;
+    height: 27.5rem;   
+}
+
+.book-title {
+    margin-top: 0.7rem;
+    font-size: 1.4rem;
+}
+
+.book-author {
+    margin: 0.7rem 0;
+    font-size: 1rem;
+}
+
+.star-rating-container{
+    height: 1.4rem;  
+    display: flex;
+}
+
+.star-whole-empty {
+    width: 1.4rem;    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(empty_whole_star.png);
+}
+
+.star-whole-filled {
+    width: 1.4rem;    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(filled_whole_star.png);
+}
+
+.star-filled,.star-empty {  
+    width: 0.7rem;    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;    
+}
+
+.mirror {
+    transform: scaleX(-1);
+    margin-right: 5px;
+}
+
+.star-filled {background-image: url(filled_star.png);}
+
+.star-empty {background-image: url(empty_star.png);}
