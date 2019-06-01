@@ -13,7 +13,8 @@ closeFormButton.onclick = function(){
 
 uploadBookButton.addEventListener("click", gatherData);
 
-function gatherData(){  
+function gatherData(event){ 
+  event.preventDefault(); 
   let title = document.getElementById("title").value,
       firstName = document.getElementById("firstName").value,
       lastName = document.getElementById("lastName").value,   
@@ -24,8 +25,7 @@ function gatherData(){
 
   author.firstName = firstName;
   author.lastName = lastName;
-
-  event.preventDefault()
+  
   categories = gatherValuesOfMarkedCheckboxes ();   
   createNewBook(title, author, cost, categories, imageUrl);   
 }
