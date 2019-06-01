@@ -1,0 +1,17 @@
+footer {background-color: #181e2c;}
+
+footer button{
+    width: 5.5rem;
+    height: 4.5rem;
+    color: #ffffff;
+    outline: none;
+    border: 1px solid transparent;      
+}
+
+#settings {background-color: #15a4fa;}
+
+#settings:hover {color: #046bac;}
+
+#questions {background-color: #1f2637;}
+
+#questions:hover {background-color: #3c445a;}
